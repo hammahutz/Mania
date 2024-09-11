@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mania.Android", "Mania.Android\Mania.Android.csproj", "{E892DA78-DE8F-46AC-8C6E-DDD1BF8D7DA4}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mania.Core", "Mania.Core\Mania.Core.csproj", "{E0EBF566-0180-4B26-AF83-1E5184811C52}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mania.DirectX", "Mania.DirectX\Mania.DirectX.csproj", "{243E3ABE-0528-4A35-98B9-A6880415DC4E}"
@@ -22,10 +20,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E892DA78-DE8F-46AC-8C6E-DDD1BF8D7DA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E892DA78-DE8F-46AC-8C6E-DDD1BF8D7DA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E892DA78-DE8F-46AC-8C6E-DDD1BF8D7DA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E892DA78-DE8F-46AC-8C6E-DDD1BF8D7DA4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E0EBF566-0180-4B26-AF83-1E5184811C52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E0EBF566-0180-4B26-AF83-1E5184811C52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E0EBF566-0180-4B26-AF83-1E5184811C52}.Release|Any CPU.ActiveCfg = Release|Any CPU

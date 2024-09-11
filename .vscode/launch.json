@@ -1,0 +1,38 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "OpenGL",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "Build OpenGL",
+      "program": "${workspaceFolder}/Mania.OpenGL/bin/Debug/net8.0/Mania.OpenGL.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/Mania.OpenGL",
+      "stopAtEntry": false,
+      "console": "internalConsole"
+    },
+    {
+      "name": "Android",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "Build Android",
+      "program": "${workspaceFolder}/Mania.Android/bin/Debug/net8.0/Mania.Android.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/Mania.Android",
+      "stopAtEntry": false,
+      "console": "internalConsole"
+    },
+    {
+      "name": "DirectX",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "Build DirectX",
+      "program": "${workspaceFolder}/Mania.DirectX/bin/Debug/net8.0-windows/Mania.DirectX.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/Mania.DirectX",
+      "stopAtEntry": false,
+      "console": "internalConsole"
+    }
+  ]
+}

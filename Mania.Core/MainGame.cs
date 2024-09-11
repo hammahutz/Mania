@@ -8,6 +8,7 @@ public class MainGame : Game
 {
     private GraphicsDeviceManager _graphics;
     private SpriteBatch _spriteBatch;
+    private SpriteFont _debugFont;
 
     public MainGame()
     {
@@ -26,6 +27,7 @@ public class MainGame : Game
     protected override void LoadContent()
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
+        _debugFont = Content.Load<SpriteFont>("Debug");
 
         // TODO: use this.Content to load your game content here
     }
@@ -45,6 +47,20 @@ public class MainGame : Game
         GraphicsDevice.Clear(Color.CornflowerBlue);
 
         // TODO: Add your drawing code here
+        _spriteBatch.Begin();
+#if DIRECTX
+        _spriteBatch.DrawString(_debugFont, "Hello world, DirectX", Vector2.Zero, Color.GreenYellow);
+#endif
+#if OPENGL
+        _spriteBatch.DrawString(_debugFont, "Hello world, OpenGL", Vector2.Zero, Color.Blue);
+#endif
+#if ANDROID
+        _spriteBatch.DrawString(_debugFont, "Hello world, DirectX", Vector2.Zero, Color.Green);
+#endif
+        // #else
+        //         _spriteBatch.DrawString(_debugFont, "Hello world, from the void!?", Vector2.Zero, Color.Purple);
+        // #endif
+        _spriteBatch.End();
 
         base.Draw(gameTime);
     }
