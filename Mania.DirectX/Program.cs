@@ -1,2 +1,2 @@
-﻿using var game = new Mania.Core.GameRoot();
+﻿using var game = new Mania.Core.MainGame();
 game.Run();
