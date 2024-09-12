@@ -10,7 +10,4 @@
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Mania.Engine\Mania.Engine.csproj" />
-  </ItemGroup>
 </Project>

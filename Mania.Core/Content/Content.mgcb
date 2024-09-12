@@ -10,6 +10,7 @@
 
 #-------------------------------- References --------------------------------#
 
+/reference:..\..\Mania.Pipeline\bin\Debug\net8.0\Mania.Pipeline.dll
 
 #---------------------------------- Content ---------------------------------#
 
@@ -19,4 +20,11 @@
 /processorParam:PremultiplyAlpha=True
 /processorParam:TextureFormat=Compressed
 /build:Debug.spritefont
+
+#begin example.json
+/importer:JsonImporter
+/processor:JsonProcessor
+/processorParam:Minify=True
+/processorParam:RuntimeIdentifier=Mania.Core.Data.Pipeline.Json.ExampleModelTypeReader, Mania.Core
+/build:example.json
 
