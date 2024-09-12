@@ -27,7 +27,7 @@ public class MainGame : Game
     protected override void LoadContent()
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
-        _debugFont = Content.Load<SpriteFont>("Debug");
+        _debugFont = Content.Load<SpriteFont>(AssetPath.FontsDebug);
 
         // TODO: use this.Content to load your game content here
     }
