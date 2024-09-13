@@ -1,4 +1,5 @@
 ﻿using Mania.Core.Data.Pipeline.Json;
+using Mania.Engine;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -11,6 +12,7 @@ public class MainGame : Game
     private SpriteBatch _spriteBatch;
     private SpriteFont _debugFont;
     private ExampleModel _exampleModel;
+    private SceneDirector _sceneDirector;
 
     public MainGame()
     {
@@ -21,8 +23,6 @@ public class MainGame : Game
 
     protected override void Initialize()
     {
-        // TODO: Add your initialization logic here
-
         base.Initialize();
     }
 
@@ -31,41 +31,37 @@ public class MainGame : Game
         _spriteBatch = new SpriteBatch(GraphicsDevice);
         _debugFont = Content.Load<SpriteFont>(AssetPath.FontsDebug);
         _exampleModel = Content.Load<ExampleModel>("example");
-
-        // TODO: use this.Content to load your game content here
+        _sceneDirector = new SceneDirector(this, new Level1());
     }
 
     protected override void Update(GameTime gameTime)
     {
         if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             Exit();
-
-        // TODO: Add your update logic here
-
         base.Update(gameTime);
+        _sceneDirector.Update(gameTime);
     }
 
     protected override void Draw(GameTime gameTime)
     {
         GraphicsDevice.Clear(Color.CornflowerBlue);
 
-        // TODO: Add your drawing code here
         _spriteBatch.Begin();
+
+        _sceneDirector.Draw(_spriteBatch);
+
+        string platform;
 #if DIRECTX
-        _spriteBatch.DrawString(_debugFont, "Hello world, DirectX", Vector2.Zero, Color.GreenYellow);
+        platform = "DirectX";
+#elif OPENGL
+        platform = "OpenGL";
+#elif ANDROID
+        platform = "Android";
+#else
+        platform = "the void!?";
 #endif
-#if OPENGL
-        _spriteBatch.DrawString(_debugFont, "Hello world, OpenGL", Vector2.Zero, Color.Blue);
-#endif
-#if ANDROID
-        _spriteBatch.DrawString(_debugFont, "Hello world, DirectX", Vector2.Zero, Color.Green);
-#endif
-        // #else
-        //         _spriteBatch.DrawString(_debugFont, "Hello world, from the void!?", Vector2.Zero, Color.Purple);
-        // #endif
-
+        _spriteBatch.DrawString(_debugFont, $"Hello world from {platform}", Vector2.Zero, Color.GreenYellow);
         _spriteBatch.DrawString(_debugFont, _exampleModel.ToString(), new Vector2(0, 20f), Color.Green);
-
 
         _spriteBatch.End();
 
