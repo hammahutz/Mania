@@ -5,17 +5,20 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Mania.Engine;
 
-public abstract class Scene
+public abstract class Scene : State
 {
-    public event Action<Scene> OnChangeScene;
-    public void ChangeScene(Scene scene) => OnChangeScene?.Invoke(scene);
+    protected Game Game {get; private set;}
     protected ContentManager GlobalContent { get; private set; }
     protected ContentManager LocalContent { get; private set; }
-
-    public void Enter(Game game)
+    public Scene(Game game)
     {
-        GlobalContent = game.Content;
-        LocalContent = new ContentManager(game.Services);
+        Game = game;
+    }
+
+    public override void Enter()
+    {
+        GlobalContent = Game.Content;
+        LocalContent = new ContentManager(Game.Services);
         LoadContent();
     }
 
@@ -24,7 +27,7 @@ public abstract class Scene
     public abstract void Draw(SpriteBatch spriteBatch);
     protected virtual void UnloadContent() { }
 
-    public void Exit()
+    public override void Exit()
     {
         LocalContent.Unload();
         LocalContent.Dispose();

@@ -7,36 +7,17 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Mania.Engine;
 
-public class SceneDirector
+public class SceneDirector<T> : StateDirector<T> where T : Scene
 {
     public Game Game { get; set; }
-    protected Scene CurrentScene { get; set; }
-    public SceneDirector(Game game, Scene scene)
+
+    public SceneDirector(Game game, T scene)
     {
         Game = game;
-        CurrentScene = scene;
+        CurrentState = scene;
+        CurrentState.Enter();
     }
 
-    public void Update(GameTime gameTime) => CurrentScene.Update(gameTime);
-    public void Draw(SpriteBatch spriteBatch) => CurrentScene.Draw(spriteBatch);
-    public void TransitionToScene(Scene nextScene)
-    {
-        UnloadCurrentScene();
-        LoadNextScene(nextScene);
-    }
-    private void LoadNextScene(Scene nextScene)
-    {
-        CurrentScene = nextScene;
-        CurrentScene.OnChangeScene += TransitionToScene;
-        CurrentScene.Enter(Game);
-    }
-    private void UnloadCurrentScene()
-    {
-        if (CurrentScene != null)
-        {
-            CurrentScene.Exit();
-            CurrentScene.OnChangeScene -= TransitionToScene;
-        }
-    }
-
+    public void Update(GameTime gameTime) => CurrentState.Update(gameTime);
+    public void Draw(SpriteBatch spriteBatch) => CurrentState.Draw(spriteBatch);
 }

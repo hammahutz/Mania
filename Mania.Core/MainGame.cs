@@ -12,7 +12,7 @@ public class MainGame : Game
     private SpriteBatch _spriteBatch;
     private SpriteFont _debugFont;
     private ExampleModel _exampleModel;
-    private SceneDirector _sceneDirector;
+    private SceneDirector<Scene> _sceneDirector;
 
     public MainGame()
     {
@@ -31,7 +31,7 @@ public class MainGame : Game
         _spriteBatch = new SpriteBatch(GraphicsDevice);
         _debugFont = Content.Load<SpriteFont>(AssetPath.FontsDebug);
         _exampleModel = Content.Load<ExampleModel>("example");
-        _sceneDirector = new SceneDirector(this, new Level1());
+        _sceneDirector = new SceneDirector<Scene>(this, new Level1(this));
     }
 
     protected override void Update(GameTime gameTime)

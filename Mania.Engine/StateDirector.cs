@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Mania.Engine;
 
-public abstract class StateDirector<T> where T : State
+public class StateDirector<T> where T : State
 {
-    protected abstract T CurrentState { get; set; }
+    protected T CurrentState { get; set; }
 
     public virtual void TransitionToState(State nextState)
     {
