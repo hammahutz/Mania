@@ -16,13 +16,14 @@ public abstract class Scene
     {
         GlobalContent = game.Content;
         LocalContent = new ContentManager(game.Services);
+        LocalContent.RootDirectory = "Content";
         LoadContent();
     }
 
-    protected virtual void LoadContent() { }
+    protected abstract void LoadContent();
     public abstract void Update(GameTime gameTime);
     public abstract void Draw(SpriteBatch spriteBatch);
-    protected virtual void UnloadContent() { }
+    protected abstract void UnloadContent();
 
     public void Exit()
     {

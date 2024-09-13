@@ -14,7 +14,7 @@ public class SceneDirector
     public SceneDirector(Game game, Scene scene)
     {
         Game = game;
-        CurrentScene = scene;
+        TransitionToScene(scene);
     }
 
     public void Update(GameTime gameTime) => CurrentScene.Update(gameTime);
