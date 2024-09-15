@@ -13,3 +13,5 @@ Project planner
 - [ ] Create GraphicRectangle class _Create a graphics Rectangle_
 
 ## TODO Autogenerate Const String ContentPath.cs
+
+## TODO Pixel-shader
