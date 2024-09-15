@@ -14,4 +14,6 @@ Project planner
 
 ## TODO Autogenerate Const String ContentPath.cs
 
-## TODO Pixel-shader
+## TODO Jitter Free Pixel Shader
+
+[To watch!](https://www.youtube.com/watch?v=bfhKKSeHCKI)
