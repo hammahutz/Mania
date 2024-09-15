@@ -4,12 +4,12 @@
 
 Project planner
 
-## Vector graphics library
+## TODO Vector graphics library
 
 - [ ] Create GraphicVector namespace
-- [ ] Create GraphicPoint class *Create a point*
-- [ ] Create GraphicLine *Drawable line from point A to B*
-- [ ] Create GraphicPolyline *Drawable line from point A to B*
-- [ ] Create GraphicRectangle class *Create a graphics Rectangle*
+- [ ] Create GraphicPoint class _Create a point_
+- [ ] Create GraphicLine _Drawable line from point A to B_
+- [ ] Create GraphicPolyline _Drawable line from point A to B_
+- [ ] Create GraphicRectangle class _Create a graphics Rectangle_
 
-## Autogenerate Const String ContentPath.cs
+## TODO Autogenerate Const String ContentPath.cs
