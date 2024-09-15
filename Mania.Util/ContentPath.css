@@ -1,0 +1,14 @@
+public static class ContentPath
+{
+	public static class /Texture2D
+	{
+	}
+	public static class /Json
+	{
+		public const string example = @"../Mania.Core/Content/Content/Json/example.json";
+	}
+	public static class /SpriteFont
+	{
+		public const string Debug = @"../Mania.Core/Content/Content/SpriteFont/Debug.spritefont";
+	}
+}
