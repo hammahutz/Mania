@@ -1,0 +1,28 @@
+<#@ template language="C#" debug="true" hostspecific="true" #>
+<#@ output extension=".cs" #>
+<#@ import namespace="System.IO" #>
+
+<#
+    // Specificera sökvägen till din Content-mapp
+    string contentFolderPath = Path.Combine(Host.ResolvePath("."), "Content"); // Anta att Content-mappen är i samma projekt
+
+    string className = "ContentPath";
+    var files = Directory.GetFiles(contentFolderPath);
+
+#>
+public static class <#= className #>
+{
+<#
+    foreach (var filePath in files)
+    {
+        string fileName = Path.GetFileName(filePath);
+        string constantName = Path.GetFileNameWithoutExtension(fileName)
+                              .Replace(" ", "")
+                              .Replace("-", "_");
+
+#>
+    public const string <#= constantName #> = @"<#= filePath #>";
+<#
+    }
+#>
+}
