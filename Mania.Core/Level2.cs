@@ -16,7 +16,7 @@ public class Level2 : Scene
 
     protected override void LoadContent()
     {
-        _debugFont = GlobalContent.Load<SpriteFont>("Debug");
+        _debugFont = GlobalContent.Load<SpriteFont>(ContentPaths.SpriteFont.Debug);
     }
 
     public override void Update(GameTime gameTime)
