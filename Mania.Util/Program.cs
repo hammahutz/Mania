@@ -1,26 +1,24 @@
-﻿using System.Dynamic;
-using System.Text;
+﻿using System.Text;
 using CommandLine;
 
 namespace Mania.Util;
 
 class Settings
 {
-    [Value(0, MetaName = "Project Folder Root Path", Required = true, HelpText = "Monogame project path")]
+    [Value(0, MetaName = "Project Folder Root Path", Required = false, HelpText = "Monogame project path")]
     public string ProjectFolderRootPath { get; set; } = ".";
     public string OutputClassName { get; set; } = "ContentPaths";
-    public string ContentFolderPath { get => $"{ProjectFolderRootPath}/Content"; }
-    public string[] IgnoreFolders = ["bin", "obj"];
-    public string[] IgnoreFiles = ["Content.mgcb"];
-
+    public string ContentFolderPath { get => Path.Combine(ProjectFolderRootPath, "Content"); }
+    public string[] IgnoreFolders { get; set; } = ["bin", "obj"];
+    public string[] IgnoreFiles { get; set; } = ["Content.mgcb"];
 
     [Option('v', "verbose", Required = false, HelpText = "Set output to verbose messages.")]
     public bool Verbose { get; set; }
-    public void Debug(string text) { if (Verbose && !silent) Console.WriteLine(text); }
-    public void Print(string text) { if (!silent) Console.WriteLine(text); }
 
     [Option('s', "silent", Required = false, HelpText = "No messages")]
-    public bool silent { get; set; }
+    public bool Silent { get; set; }
+
+
 }
 
 
@@ -29,80 +27,107 @@ class Program
     static void Main(string[] args)
     {
         Parser.Default.ParseArguments<Settings>(args)
-        .WithParsed(settings =>
-        {
-            StringBuilder classContent = new StringBuilder();
-
-            settings.Debug($"{settings.OutputClassName}" + " : {");
-
-            classContent.AppendLine($"public static class {settings.OutputClassName}");
-            classContent.AppendLine("{");
-            RecursiveRead(settings.ContentFolderPath, classContent, settings, 1);
-            classContent.AppendLine("}");
-
-            settings.Debug("}");
-
-            File.WriteAllText(@$"{settings.ProjectFolderRootPath}/{settings.OutputClassName}.cs", classContent.ToString());
-
-            settings.Print($"File saved successfully to {settings.ProjectFolderRootPath}/{settings.OutputClassName}.cs");
-        })
-        .WithNotParsed(errs =>
-        {
-            Console.WriteLine("Error argument. Use --help.");
-        });
+            .WithParsed(GenerateContentPathClass)
+            .WithNotParsed(errs => Console.WriteLine("Error argument. Use --help."));
     }
 
-    static void RecursiveRead(string path, StringBuilder classContent, Settings settings, int depth)
+    static void GenerateContentPathClass(Settings settings)
     {
-        string classTab = "";
-        for (int i = 0; i < depth; i++)
-        {
-            classTab += "\t";
-        }
+        Logger.Settings = settings;
+
+        var generator = new ContentPathClassGenerator(settings);
+        string content = generator.Generate();
+        string savePath = $"{Path.Combine(settings.ProjectFolderRootPath, settings.OutputClassName)}.cs";
+
+        File.WriteAllText(savePath, content);
+        Logger.Print($"File saved successfully to {savePath}");
+    }
+}
+static class Logger
+{
+    public static Settings Settings { get; set; } = new Settings();
+    public static void Log(string text) { if (Settings.Verbose && !Settings.Silent) Console.WriteLine(text); }
+    public static void Print(string text) { if (!Settings.Silent) Console.WriteLine(text); }
+}
+
+class ContentPathClassGenerator
+{
+    public Settings Settings { get; private set; }
+    public ContentPathClassGenerator(Settings settings) => Settings = settings;
+
+
+
+    public string Generate()
+    {
+        var classContent = new StringBuilder();
+
+        Logger.Print($"Generating content path class");
+        Logger.Log($"{Settings.OutputClassName}" + " : {");
+
+        classContent.AppendLine($"public static class {Settings.OutputClassName}");
+        classContent.AppendLine("{");
+
+        classContent.Append(RecursiveFolderToClass(Settings.ContentFolderPath, 1));
+
+        classContent.AppendLine("}");
+        Logger.Log("}");
+
+        Logger.Print($"File generate successfully");
+        return classContent.ToString();
+    }
+
+
+    private string RecursiveFolderToClass(string path, int indents)
+    {
+        var classContent = new StringBuilder();
         string[] folderPaths = Directory.GetDirectories(path);
+        string classIndents = new string('\t', indents);
 
         foreach (string folderPath in folderPaths)
         {
-
-            string folderName = folderPath.Replace(@$"{path}\", "");
-            if (settings.IgnoreFolders.Contains(folderName))
+            string folderName = folderPath.Replace(path, "").Substring(1);
+            if (Settings.IgnoreFolders.Contains(folderName))
                 continue;
 
-            settings.Debug($"{classTab}{folderName}" + " : {");
-            classContent.AppendLine($"{classTab}public static class {folderName}");
-            classContent.Append($"{classTab}");
+
+            Logger.Log($"{classIndents}{folderName}" + " : {");
+
+            classContent.AppendLine($"{classIndents}public static class {folderName}");
+            classContent.Append($"{classIndents}");
             classContent.Append("{\n");
-            RecursiveRead(folderPath, classContent, settings, depth + 1);
 
-            string[] filePaths = Directory.GetFiles(folderPath);
-            string fileTab = "";
-            for (int i = 0; i < depth + 1; i++)
-            {
-                fileTab += "\t";
+            classContent.Append(RecursiveFolderToClass(folderPath, indents + 1));
+            classContent.Append(FilesToStrings(folderPath, indents));
 
-            }
-            foreach (string filePath in filePaths)
-            {
-                if (settings.IgnoreFiles.Contains(filePath))
-                    continue;
-
-                string constantPath = Path.GetFileName(filePath).Replace(path, "");
-                string constantName = Path.GetFileNameWithoutExtension(constantPath).Replace(path, "");
-                string constantValue = filePath
-                    .Replace(settings.ContentFolderPath, "")
-                    .Split('.')
-                    [0];
-
-                settings.Debug($"{fileTab}{constantName} = {constantValue}");
-
-
-                classContent.AppendLine($"{fileTab}public const string {constantName} = @\"{constantValue}\";");
-            }
-            classContent.Append($"{classTab}");
+            classContent.Append($"{classIndents}");
             classContent.Append("}\n");
 
-            settings.Debug($"{classTab}" +"}");
+            Logger.Log($"{classIndents}" + "}");
         }
+
+        return classContent.ToString();
+    }
+
+    private string FilesToStrings(string folderPath, int indents)
+    {
+        var classContent = new StringBuilder();
+        string[] filePaths = Directory.GetFiles(folderPath);
+        string fileIndents = new string('\t', indents + 1);
+
+        foreach (string filePath in filePaths)
+        {
+            if (Settings.IgnoreFiles.Contains(filePath))
+                continue;
+
+            string constantName = Path.GetFileNameWithoutExtension(filePath);
+            string constantValue = filePath.Replace(Settings.ContentFolderPath, "").Split('.')[0];
+
+            Logger.Log($"{fileIndents}{constantName} = {constantValue}");
+
+            classContent.AppendLine($"{fileIndents}public const string {constantName} = @\"{constantValue}\";");
+        }
+
+        return classContent.ToString();
     }
 }
 

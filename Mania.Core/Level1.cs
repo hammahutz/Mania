@@ -20,7 +20,7 @@ public class Level1 : Scene
         {
                 _debugFont = GlobalContent.Load<SpriteFont>(ContentPaths.SpriteFont.Debug);
                 _exampleModel = LocalContent.Load<ExampleModel>(ContentPaths.Json.Example);
-                _hero = LocalContent.Load<Texture2D>(ContentPaths.Hero.Texture2D.Attack1);
+                _hero = LocalContent.Load<Texture2D>(ContentPaths.Hero.Texture2D.Attack2);
         }
 
         public override void Update(GameTime gameTime)

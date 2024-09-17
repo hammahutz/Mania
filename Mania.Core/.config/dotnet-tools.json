@@ -43,6 +43,13 @@
         "t4"
       ],
       "rollForward": false
+    },
+    "mania.util": {
+      "version": "0.0.1",
+      "commands": [
+        "mgcp"
+      ],
+      "rollForward": false
     }
   }
 }
