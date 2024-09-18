@@ -19,7 +19,7 @@ class Settings
     public bool Silent { get; set; }
 
 
-}
+                }
 
 
 class Program
@@ -120,7 +120,7 @@ class ContentPathClassGenerator
                 continue;
 
             string constantName = Path.GetFileNameWithoutExtension(filePath);
-            string constantValue = filePath.Replace(Settings.ContentFolderPath, "").Split('.')[0];
+            string constantValue = filePath.Replace(Settings.ContentFolderPath, "").Split('.')[0].Substring(1);
 
             Logger.Log($"{fileIndents}{constantName} = {constantValue}");
 
