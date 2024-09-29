@@ -7,6 +7,9 @@
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
   </ItemGroup>
+  <PropertyGroup>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
   <!-- <ItemGroup>
     <ProjectReference Include="..\Mania.Pipeline\Mania.Pipeline.csproj" />
   </ItemGroup> -->
