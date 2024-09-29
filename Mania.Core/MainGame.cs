@@ -1,5 +1,6 @@
 ﻿using Mania.Core.Data.Pipeline.Json;
 using Mania.Engine;
+using Mania.Engine.GameActors.Vector;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -27,7 +28,7 @@ public class MainGame : Game
     protected override void LoadContent()
     {
         _spriteBatch = new SpriteBatch(GraphicsDevice);
-        _sceneDirector = new SceneDirector(this, new Level1());
+        _sceneDirector = new SceneDirector(this, new Level1(GraphicsDevice));
     }
 
     protected override void Update(GameTime gameTime)
@@ -48,6 +49,8 @@ public class MainGame : Game
 
 
         _sceneDirector.Draw(_spriteBatch);
+
+
 
 
         _spriteBatch.End();

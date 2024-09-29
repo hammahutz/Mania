@@ -1,9 +1,7 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Mania.Core.Data.Pipeline.Json;
 using Mania.Engine;
+using Mania.Engine.GameActors;
+using Mania.Engine.GameActors.Vector;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -12,24 +10,31 @@ namespace Mania.Core;
 
 public class Level1 : Scene
 {
+        public GraphicsDevice GraphicsDevice { get; private set; }
         private SpriteFont _debugFont;
-        private ExampleModel _exampleModel;
-        private Texture2D _hero;
+
+        private Line _line;
+
+        public Level1(GraphicsDevice graphicsDevice) => GraphicsDevice = graphicsDevice;
 
         protected override void LoadContent()
         {
+                _line = new Line(GraphicsDevice, new Vector2(10, 10), new Vector2(100, 100), new Point(2, 2));
                 _debugFont = GlobalContent.Load<SpriteFont>(ContentPaths.SpriteFont.Debug);
-                _exampleModel = LocalContent.Load<ExampleModel>(ContentPaths.Json.Example);
-                _hero = LocalContent.Load<Texture2D>(ContentPaths.Hero.Texture2D.Attack2);
+                Actors.Add(new Dot(GraphicsDevice, new Vector2(10, 10), new Point(10, 10)));
+                Actors.Add(new Dot(GraphicsDevice, new Vector2(100, 100), new Point(10, 10)));
+
+                Actors.Add(_line);
         }
 
-        public override void Update(GameTime gameTime)
+        public override void UpdateScene(GameTime gameTime)
         {
                 if (Keyboard.GetState().IsKeyDown(Keys.Space))
-                        ChangeScene(new Level2());
+                        ChangeScene(new Level2(GraphicsDevice));
+                _line.EndPosition = Mouse.GetState().Position.ToVector2();
         }
 
-        public override void Draw(SpriteBatch spriteBatch)
+        public override void DrawScene(SpriteBatch spriteBatch)
         {
                 string platform;
 #if DIRECTX
@@ -43,12 +48,10 @@ public class Level1 : Scene
 #endif
 
                 spriteBatch.DrawString(_debugFont, $"Hello world from {platform}", Vector2.Zero, Color.GreenYellow);
-                spriteBatch.DrawString(_debugFont, _exampleModel.ToString(), new Vector2(0, 20f), Color.Green);
                 spriteBatch.DrawString(_debugFont, "Hello from Level1", new Vector2(100, 100), Color.Red);
         }
 
         protected override void UnloadContent()
         {
-                _exampleModel = null;
         }
 }
