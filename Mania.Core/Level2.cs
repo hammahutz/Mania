@@ -14,21 +14,18 @@ public class Level2 : Scene
 {
     private SpriteFont _debugFont;
 
-    public GraphicsDevice GraphicsDevice { get; private set; }
-
-    public Level2(GraphicsDevice graphicsDevice) => GraphicsDevice = graphicsDevice;
     protected override void LoadContent()
     {
         _debugFont = GlobalContent.Load<SpriteFont>(ContentPaths.SpriteFont.Debug);
     }
 
-    public override void UpdateScene(GameTime gameTime)
+    public override void Update(GameTime gameTime)
     {
-        if (Keyboard.GetState().IsKeyDown(Keys.Space))
-            ChangeScene(new Level1(GraphicsDevice));
+         if (Keyboard.GetState().IsKeyDown(Keys.Space))
+            ChangeScene(new Level1());
     }
 
-    public override void DrawScene(SpriteBatch spriteBatch)
+    public override void Draw(SpriteBatch spriteBatch)
     {
         spriteBatch.DrawString(_debugFont, "Hello from Level2", new Vector2(100, 100), Color.Red);
     }
