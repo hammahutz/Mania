@@ -1,23 +1,22 @@
 using System;
+using Mania.Engine.Util;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Mania.Engine.GameLogic.Components;
 
-public class LineComponent : PointComponent
+public class LineComponent : GfxComponent
 {
-    private Vector2 endPosition;
+    private Vector2 _endPosition;
 
-    public LineComponent(Node node, GraphicsDevice graphicsDevice) : base(node, graphicsDevice)
-    {
-    }
+    public LineComponent(Node node, GraphicsDevice graphicsDevice) : base(node, TextureHelper.GetPixel(graphicsDevice)) { }
 
     public Vector2 EndPosition
     {
-        get => endPosition;
+        get => _endPosition;
         set
         {
-            endPosition = value;
+            _endPosition = value;
 
             Vector2 delta = EndPosition - Node.Transform.Position;
             SetLength(delta);

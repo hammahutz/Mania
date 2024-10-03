@@ -6,11 +6,11 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Mania.Engine.GameLogic;
 
-public class ComponentHandler
+public class ComponentsHandler
 {
     public Node CurrentNode { get; private set; }
 
-    public ComponentHandler(Node node)
+    public ComponentsHandler(Node node)
     {
         CurrentNode = node;
     }
@@ -18,7 +18,7 @@ public class ComponentHandler
     public event Action<GameTime> OnUpdate;
     public event Action<SpriteBatch> OnDraw;
 
-    public ComponentHandler AddToGameLoop(Component component)
+    public ComponentsHandler AddToGameLoop(Component component)
     {
         if (component is IDrawComponent)
         {
@@ -35,7 +35,7 @@ public class ComponentHandler
         return this;
     }
 
-    public ComponentHandler RemoveFromGameLoop(Component component)
+    public ComponentsHandler RemoveFromGameLoop(Component component)
     {
         if (component is IDrawComponent)
         {

@@ -16,14 +16,14 @@ public abstract class Node
 
     public Transform Transform { get; private set; }
     public RelativeHandler Relatives { get; private set; }
-    public ComponentHandler Components { get; private set; }
+    public ComponentsHandler Components { get; private set; }
 
     public Node()
     {
         Transform = new Transform(this);
 
         Relatives = new RelativeHandler(this);
-        Components = new ComponentHandler(this);
+        Components = new ComponentsHandler(this);
     }
 
     public void Enter(ContentManager globalContent, ContentManager localContent)
