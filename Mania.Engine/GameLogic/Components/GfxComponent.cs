@@ -6,7 +6,7 @@ namespace Mania.Engine.GameLogic.Components;
 
 public class GfxComponent : Component, IDrawComponent
 {
-    public Texture2D Texture2D { get; set; }
+    public Texture2D Texture2D { get; private set; }
     public Rectangle? SourceRectangle { get; set; } = null;
     public Color Color { get; set; } = Color.White;
     public Vector2 Origin { get; set; } = Vector2.Zero;

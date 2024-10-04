@@ -6,32 +6,37 @@ namespace Mania.Engine.GameLogic.Components;
 
 public class SpriteComponent : GfxComponent
 {
-    public Point Size { get; private set; }
-    public Point Location => new(CurrentRow * Size.X, CurrentColumn * Size.Y);
+    public Point CellCoordinate { get; private set; }
+    public Point CellSize { get; private set; }
+    public Rectangle CellSource => new Rectangle(CellCoordinate, CellSize);
 
-    public int CurrentRow { get; private set; } = 0;
-    public int CurrentColumn { get; private set; } = 0;
+    public int CurrentRow { get; private set; }
+    public int CurrentColumn { get; private set; }
 
-    public int Rows => Size.X / Texture2D.Width;
-    public int Columns => Size.Y / Texture2D.Height;
+    public int Rows => CellSize.X / Texture2D.Width;
+    public int Columns => CellSize.Y / Texture2D.Height;
 
-    public SpriteComponent(Node node, Texture2D texture2D, Point spriteSize)
+
+    public SpriteComponent(Node node, Texture2D texture2D, Point location, Point size)
         : base(node, texture2D)
     {
-        SetLocation(Point.Zero);
-        SetSize(spriteSize);
+        SetCellSize(size);
+        SetCellLocation(location);
     }
 
-    public void SetLocation(Point location)
+    public void SetCellLocation(Point cell) => SetCellLocation(cell.X, cell.Y);
+    public void SetCellLocation(int column, int row)
     {
-        CurrentRow = Math.Clamp(location.X, 0, Rows);
-        CurrentColumn = Math.Clamp(location.Y, 0, Columns);
-        SourceRectangle = new Rectangle(Location, Size);
+        CurrentColumn = Math.Clamp(column, 0, Columns);
+        CurrentRow = Math.Clamp(row, 0, Rows);
+
+        CellCoordinate = new Point(CurrentColumn * CellSize.X, CurrentRow * CellSize.Y);
+        SourceRectangle = CellSource;
     }
 
-    public void SetSize(Point size)
+    public void SetCellSize(Point size)
     {
-        Size = size;
-        SourceRectangle = new Rectangle(Location, Size);
+        CellSize = size;
+        SetCellLocation(CurrentColumn, CurrentRow);
     }
 }
