@@ -32,7 +32,7 @@
       "args": [],
       "cwd": "${workspaceFolder}/Mania.DirectX",
       "stopAtEntry": false,
-      "console": "internalConsole"
+      "console": "integratedTerminal"
     }
   ]
 }

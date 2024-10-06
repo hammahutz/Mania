@@ -1,4 +1,4 @@
-namespace Mania.Engine.GameLogic.Vector;
+namespace Mania.Engine.GameLogic.Nodes.Vectors;
 
 /// <summary>
 /// Sum1

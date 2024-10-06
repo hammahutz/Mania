@@ -1,5 +1,6 @@
 using Mania.Engine.GameLogic;
-using Mania.Engine.GameLogic.Vector;
+using Mania.Engine.GameLogic.Nodes.UI;
+using Mania.Engine.GameLogic.Nodes.Vectors;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -8,7 +9,7 @@ namespace Mania.Core;
 public class Level1 : Node
 {
     public GraphicsDevice GraphicsDevice { get; private set; }
-    private SpriteFont _debugFont;
+    private UITextNode _debugText;
     private Point mousePos = Point.Zero;
     private LineNode LineNode;
 
@@ -16,7 +17,7 @@ public class Level1 : Node
 
     protected override void LoadContent()
     {
-        _debugFont = GlobalContent.Load<SpriteFont>(ContentPaths.SpriteFont.Debug);
+        _debugText = new UITextNode(GlobalContent.Load<SpriteFont>(ContentPaths.SpriteFont.Debug));
         LineNode = new LineNode(GraphicsDevice, new Vector2(0, 0), new Vector2(400, 600));
         var PointNode = new PointNode(GraphicsDevice, new Vector2(100, 100));
 
@@ -32,7 +33,6 @@ public class Level1 : Node
             ],
             new PolyLineNodeOptions() { Closed = true }
         );
-
         Relatives.AddChildren(
             [
                 LineNode,
@@ -67,13 +67,9 @@ public class Level1 : Node
         platform = "the void!?";
 #endif
 
-        spriteBatch.DrawString(
-            _debugFont,
-            $"Hello world from {platform}",
-            Vector2.Zero,
-            Color.GreenYellow
-        );
-        spriteBatch.DrawString(_debugFont, "Hello from Level1", new Vector2(100, 100), Color.Red);
-        spriteBatch.DrawString(_debugFont, mousePos.ToString(), mousePos.ToVector2(), Color.Red);
+        _debugText.UIText.Content =
+            @$"Hello world from {platform}
+            Hello form level 1
+            {mousePos}";
     }
 }

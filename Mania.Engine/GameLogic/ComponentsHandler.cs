@@ -18,7 +18,7 @@ public class ComponentsHandler
     public event Action<GameTime> OnUpdate;
     public event Action<SpriteBatch> OnDraw;
 
-    public ComponentsHandler AddToGameLoop(Component component)
+    public T AddToGameLoop<T>(T component) where T : Component
     {
         if (component is IDrawComponent)
         {
@@ -32,10 +32,10 @@ public class ComponentsHandler
         {
             GameDebug.Warning($"Not a compatible component {component}");
         }
-        return this;
+        return component;
     }
 
-    public ComponentsHandler RemoveFromGameLoop(Component component)
+    public void RemoveFromGameLoop(Component component)
     {
         if (component is IDrawComponent)
         {
@@ -50,7 +50,6 @@ public class ComponentsHandler
             GameDebug.Warning($"Not a compatible component {component}");
         }
         component.Depose();
-        return this;
     }
 
     public void Update(GameTime gameTime) => OnUpdate?.Invoke(gameTime);
