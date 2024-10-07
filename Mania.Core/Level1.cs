@@ -37,7 +37,8 @@ public class Level1 : Node
             [
                 LineNode,
                 PointNode,
-                poly
+                poly,
+                _debugText
             ]
         );
     }
