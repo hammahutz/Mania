@@ -38,7 +38,8 @@ public class Level1 : Node
                 LineNode,
                 PointNode,
                 poly,
-                _debugText
+                _debugText,
+                new RectangleNode(GraphicsDevice, new Vector2(100, 100), new RectangleNodeOptions {Closed = true, Fill = false})
             ]
         );
     }

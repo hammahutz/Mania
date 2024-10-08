@@ -38,8 +38,13 @@ public class RelativeHandler
         return this;
     }
 
-    public RelativeHandler AddChild(Node child)
+    public RelativeHandler AddChild(Node? child)
     {
+        if (child is null)
+        {
+            GameDebug.Warning($"Tries to add child, but child is null. Parent: {this}");
+            return this;
+        }
         if (Children.Contains(child))
         {
             GameDebug.Log($"Tries to add child, but parent {this} already contains child {child}");
@@ -56,17 +61,27 @@ public class RelativeHandler
 
     public RelativeHandler AddChildren(Node[] children)
     {
-        var (childrenAlreadyAdded, childrenToAdd) = children.Partition(c => Children.Contains(c));
+        var (childrenNotToAdd, childrenToAdd) = children.Partition(c =>
+        {
+            if (c is not null)
+            {
+                return Children.Contains(c);
+            }
+            return true;
+        });
 
-        childrenAlreadyAdded
+        childrenNotToAdd
             ?.ToList()
             .ForEach(c =>
                 {
-                    GameDebug.Log($"Tries to add child, but parent {this} already contains child {c}");
-                    GameDebug.Debug($"Tries to add child, but parent {this} already contains child {c}");
-                    GameDebug.WriteLine($"Tries to add child, but parent {this} already contains child {c}");
-                    GameDebug.Warning($"Tries to add child, but parent {this} already contains child {c}");
-                    GameDebug.Error($"Tries to add child, but parent {this} already contains child {c}");
+                    if (c is null)
+                    {
+                        GameDebug.Warning($"Tries to add child, but child is null");
+                    }
+                    else
+                    {
+                        GameDebug.Log($"Tries to add child, but parent {this} already contains child {c}");
+                    }
                 }
             );
 
