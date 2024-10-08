@@ -2,7 +2,7 @@ using Mania.Engine.GameLogic.Components;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Mania.Engine.GameLogic.Vector;
+namespace Mania.Engine.GameLogic.Nodes.Vectors;
 
 public class PointNode : Node
 {

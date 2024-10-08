@@ -6,11 +6,11 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Mania.Engine.GameLogic;
 
-public class ComponentHandler
+public class ComponentsHandler
 {
     public Node CurrentNode { get; private set; }
 
-    public ComponentHandler(Node node)
+    public ComponentsHandler(Node node)
     {
         CurrentNode = node;
     }
@@ -18,7 +18,7 @@ public class ComponentHandler
     public event Action<GameTime> OnUpdate;
     public event Action<SpriteBatch> OnDraw;
 
-    public ComponentHandler AddToGameLoop(Component component)
+    public T AddToGameLoop<T>(T component) where T : Component
     {
         if (component is IDrawComponent)
         {
@@ -32,10 +32,10 @@ public class ComponentHandler
         {
             GameDebug.Warning($"Not a compatible component {component}");
         }
-        return this;
+        return component;
     }
 
-    public ComponentHandler RemoveFromGameLoop(Component component)
+    public void RemoveFromGameLoop(Component component)
     {
         if (component is IDrawComponent)
         {
@@ -50,7 +50,6 @@ public class ComponentHandler
             GameDebug.Warning($"Not a compatible component {component}");
         }
         component.Depose();
-        return this;
     }
 
     public void Update(GameTime gameTime) => OnUpdate?.Invoke(gameTime);

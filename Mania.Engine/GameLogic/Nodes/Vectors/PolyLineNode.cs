@@ -1,12 +1,9 @@
 
 using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using Mania.Engine.GameLogic.Components;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Mania.Engine.GameLogic.Vector;
+namespace Mania.Engine.GameLogic.Nodes.Vectors;
 
 public class PolyLineNode : Node
 {

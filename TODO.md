@@ -6,10 +6,10 @@ Project planner
 
 ## TODO Vector graphics library
 
-- [ ] Create GraphicVector namespace
-- [ ] Create GraphicPoint class _Create a point_
-- [ ] Create GraphicLine _Drawable line from point A to B_
-- [ ] Create GraphicPolyline _Drawable line from point A to B_
+- [x] Create GraphicVector namespace
+- [x] Create GraphicPoint class _Create a point_
+- [x] Create GraphicLine _Drawable line from point A to B_
+- [x] Create GraphicPolyline _Drawable line from point A to B_
 - [ ] Create GraphicRectangle class _Create a graphics Rectangle_
 
 ## TODO Autogenerate Const String ContentPath.cs
