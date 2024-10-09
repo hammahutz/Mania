@@ -7,7 +7,7 @@
       "type": "process",
       "args": [
         "build",
-        "${workspaceFolder}/Mania.OpenGL",
+        "${workspaceFolder}/Source/Mania.OpenGL",
         "-p:DefineConstants=OPENGL"
       ],
       "problemMatcher": "$msCompile",
@@ -22,7 +22,7 @@
       "type": "process",
       "args": [
         "build",
-        "${workspaceFolder}/Mania.Android",
+        "${workspaceFolder}/Source/Mania.Android",
         "-p:DefineConstants=ANDROID"
       ],
       "problemMatcher": "$msCompile",
@@ -37,7 +37,7 @@
       "type": "process",
       "args": [
         "build",
-        "${workspaceFolder}/Mania.DirectX",
+        "${workspaceFolder}/Source/Mania.DirectX",
         "-p:DefineConstants=DIRECTX"
       ],
       "problemMatcher": "$msCompile",
