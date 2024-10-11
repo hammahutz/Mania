@@ -7,19 +7,26 @@ class Settings
 {
     [Value(0, MetaName = "Project Folder Root Path", Required = false, HelpText = "Monogame project path")]
     public string ProjectFolderRootPath { get; set; } = ".";
+
+    [Option('c', "class", Required = false, HelpText = "Output .cs file and class name")]
     public string OutputClassName { get; set; } = "ContentPaths";
-    public string ContentFolderPath { get => Path.Combine(ProjectFolderRootPath, "Content"); }
+
+    [Option('s', "source", Required = false, HelpText = "Content source")]
+    public string ContentFolderPath { get; set; } = "../../Content/Dist";
+
+    [Option('f', "ignored-folders", Required = false, HelpText = "List of ignored folders")]
     public string[] IgnoreFolders { get; set; } = ["bin", "obj"];
+    [Option('i', "ignored-files", Required = false, HelpText = "List of ignored files")]
     public string[] IgnoreFiles { get; set; } = ["Content.mgcb"];
 
     [Option('v', "verbose", Required = false, HelpText = "Set output to verbose messages.")]
     public bool Verbose { get; set; }
 
-    [Option('s', "silent", Required = false, HelpText = "No messages")]
+    [Option('n', "no-messages", Required = false, HelpText = "No messages")]
     public bool Silent { get; set; }
 
 
-                }
+}
 
 
 class Program

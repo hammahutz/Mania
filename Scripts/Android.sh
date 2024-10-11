@@ -1,2 +1,6 @@
 #!/bin/bash
-dotnet run --project Mania.Android/ -p:DefineConstants="ANDROID"
+
+# Byt till skriptets plats
+cd "$(dirname "$0")" || exit
+
+dotnet run --project Source/Mania.Android/ -p:DefineConstants="ANDROID"

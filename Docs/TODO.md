@@ -1,6 +1,6 @@
 # TODO
 
-[README](./README.md)
+[README](../README.md)
 
 Project planner
 

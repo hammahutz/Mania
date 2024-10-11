@@ -33,6 +33,17 @@
       "cwd": "${workspaceFolder}/Source/Mania.DirectX",
       "stopAtEntry": false,
       "console": "integratedTerminal"
+    },
+    {
+      "name": "Util",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "Build Util",
+      "program": "${workspaceFolder}/Source/Mania.Util/bin/Debug/net8.0/Mania.Util.dll",
+      "args": ["../Mania.Core", "-v", "-c", "../../Content/Dist"],
+      "cwd": "${workspaceFolder}/Source/Mania.Util",
+      "stopAtEntry": false,
+      "console": "integratedTerminal"
     }
   ]
 }
