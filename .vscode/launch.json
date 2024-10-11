@@ -6,9 +6,9 @@
       "type": "coreclr",
       "request": "launch",
       "preLaunchTask": "Build OpenGL",
-      "program": "${workspaceFolder}/Mania.OpenGL/bin/Debug/net8.0/Mania.OpenGL.dll",
+      "program": "${workspaceFolder}/Source/Mania.OpenGL/bin/Debug/net8.0/Mania.OpenGL.dll",
       "args": [],
-      "cwd": "${workspaceFolder}/Mania.OpenGL",
+      "cwd": "${workspaceFolder}/Source/Mania.OpenGL",
       "stopAtEntry": false,
       "console": "internalConsole"
     },
@@ -17,9 +17,9 @@
       "type": "coreclr",
       "request": "launch",
       "preLaunchTask": "Build Android",
-      "program": "${workspaceFolder}/Mania.Android/bin/Debug/net8.0/Mania.Android.dll",
+      "program": "${workspaceFolder}/Source/Mania.Android/bin/Debug/net8.0/Mania.Android.dll",
       "args": [],
-      "cwd": "${workspaceFolder}/Mania.Android",
+      "cwd": "${workspaceFolder}/Source/Mania.Android",
       "stopAtEntry": false,
       "console": "internalConsole"
     },
@@ -28,9 +28,20 @@
       "type": "coreclr",
       "request": "launch",
       "preLaunchTask": "Build DirectX",
-      "program": "${workspaceFolder}/Mania.DirectX/bin/Debug/net8.0-windows/Mania.DirectX.dll",
+      "program": "${workspaceFolder}/Source/Mania.DirectX/bin/Debug/net8.0-windows/Mania.DirectX.dll",
       "args": [],
-      "cwd": "${workspaceFolder}/Mania.DirectX",
+      "cwd": "${workspaceFolder}/Source/Mania.DirectX",
+      "stopAtEntry": false,
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Util",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "Build Util",
+      "program": "${workspaceFolder}/Source/Mania.Util/bin/Debug/net8.0/Mania.Util.dll",
+      "args": ["../Mania.Core", "-v", "-c", "../../Content/Dist"],
+      "cwd": "${workspaceFolder}/Source/Mania.Util",
       "stopAtEntry": false,
       "console": "integratedTerminal"
     }

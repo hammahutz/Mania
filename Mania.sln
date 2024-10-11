@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mania.Core", "Mania.Core\Mania.Core.csproj", "{E0EBF566-0180-4B26-AF83-1E5184811C52}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mania.Core", "Source\Mania.Core\Mania.Core.csproj", "{E0EBF566-0180-4B26-AF83-1E5184811C52}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mania.DirectX", "Mania.DirectX\Mania.DirectX.csproj", "{243E3ABE-0528-4A35-98B9-A6880415DC4E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mania.DirectX", "Source\Mania.DirectX\Mania.DirectX.csproj", "{243E3ABE-0528-4A35-98B9-A6880415DC4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mania.OpenGL", "Mania.OpenGL\Mania.OpenGL.csproj", "{90C0930C-1C09-4421-9CBE-FB3643371345}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mania.OpenGL", "Source\Mania.OpenGL\Mania.OpenGL.csproj", "{90C0930C-1C09-4421-9CBE-FB3643371345}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mania.Engine", "Mania.Engine\Mania.Engine.csproj", "{4F1E66DE-89D1-4056-A023-76A67A7302F2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mania.Engine", "Source\Mania.Engine\Mania.Engine.csproj", "{4F1E66DE-89D1-4056-A023-76A67A7302F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mania.Pipeline", "Mania.Pipeline\Mania.Pipeline.csproj", "{10DFF27B-5065-4DA9-82F0-3219076C9DF9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mania.Pipeline", "Source\Mania.Pipeline\Mania.Pipeline.csproj", "{10DFF27B-5065-4DA9-82F0-3219076C9DF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mania.Util", "Mania.Util\Mania.Util.csproj", "{2E089EFB-92BD-46EC-9A4A-C038D9E9F2AB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mania.Util", "Source\Mania.Util\Mania.Util.csproj", "{2E089EFB-92BD-46EC-9A4A-C038D9E9F2AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

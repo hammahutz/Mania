@@ -3,5 +3,5 @@
 # Byt till skriptets plats
 cd "$(dirname "$0")" || exit
 cd ..
-dotnet run --project Mania.Util -- Mania.Core -v
 
+dotnet run --project Source/Mania.Util -- Source/Mania.Core -v -s Content/Dist

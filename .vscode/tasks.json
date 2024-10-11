@@ -7,7 +7,7 @@
       "type": "process",
       "args": [
         "build",
-        "${workspaceFolder}/Mania.OpenGL",
+        "${workspaceFolder}/Source/Mania.OpenGL",
         "-p:DefineConstants=OPENGL"
       ],
       "problemMatcher": "$msCompile",
@@ -22,7 +22,7 @@
       "type": "process",
       "args": [
         "build",
-        "${workspaceFolder}/Mania.Android",
+        "${workspaceFolder}/Source/Mania.Android",
         "-p:DefineConstants=ANDROID"
       ],
       "problemMatcher": "$msCompile",
@@ -37,9 +37,31 @@
       "type": "process",
       "args": [
         "build",
-        "${workspaceFolder}/Mania.DirectX",
+        "${workspaceFolder}/Source/Mania.DirectX",
         "-p:DefineConstants=DIRECTX"
       ],
+      "problemMatcher": "$msCompile",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Build Util",
+      "command": "dotnet",
+      "type": "process",
+      "args": ["build", "${workspaceFolder}/Source/Mania.Util"],
+      "problemMatcher": "$msCompile",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Update content",
+      "command": "dotnet",
+      "type": "process",
+      "args": ["mgcp"],
       "problemMatcher": "$msCompile",
       "group": {
         "kind": "build",

@@ -1,2 +1,6 @@
 #!/bin/bash
-dotnet run --project Mania.DirectX/ -p:DefineConstants="DIRECTX"
+
+# Byt till skriptets plats
+cd "$(dirname "$0")" || exit
+
+dotnet run --project Source/Mania.DirectX/ -p:DefineConstants="DIRECTX"

@@ -11,13 +11,21 @@
 #-------------------------------- References --------------------------------#
 
 /reference:..\..\Mania.Pipeline\bin\Release\net8.0\Mania.Pipeline.dll
+/reference:..\..\Mania.Pipeline\bin\Release\net8.0\Mania.Pipeline.dll
 
 #---------------------------------- Content ---------------------------------#
 
-#begin SpriteFont/Debug.spritefont
+#begin ../../../Content/Dist/Json/Example.json
+/importer:JsonImporter
+/processor:JsonProcessor
+/processorParam:Minify=True
+/processorParam:RuntimeIdentifier=Mania.Core.Data.Pipeline.Json.ExampleModelTypeReader, Mania.Core
+/build:../../../Content/Dist/Json/Example.json;Json/Example.json
+
+#begin ../../../Content/Dist/SpriteFont/Debug.spritefont
 /importer:FontDescriptionImporter
 /processor:FontDescriptionProcessor
 /processorParam:PremultiplyAlpha=True
 /processorParam:TextureFormat=Compressed
-/build:SpriteFont/Debug.spritefont
+/build:../../../Content/Dist/SpriteFont/Debug.spritefont;SpriteFont/Debug.spritefont
 
