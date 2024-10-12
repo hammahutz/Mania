@@ -9,7 +9,7 @@ namespace Mania.Core;
 public class Level1 : Node
 {
     public GraphicsDevice GraphicsDevice { get; private set; }
-    private UITextNode _debugText;
+    private TextNode _debugText;
     private Point mousePos = Point.Zero;
     private LineNode LineNode;
 
@@ -17,12 +17,12 @@ public class Level1 : Node
 
     protected override void LoadContent()
     {
-        _debugText = new UITextNode(GlobalContent.Load<SpriteFont>(ContentPaths.SpriteFont.Debug));
+        _debugText = new TextNode(ContentPaths.SpriteFont.Debug);
         LineNode = new LineNode(GraphicsDevice, new Vector2(0, 0), new Vector2(400, 600));
         var PointNode = new PointNode(GraphicsDevice, new Vector2(100, 100));
 
         PointNode.Transform.LocalScale = new Vector2(100, 100);
-        PointNode.PointComponent.Color = Color.Magenta;
+        PointNode.VectorComponent.Color = Color.Magenta;
 
         var poly = new PolyLineNode(
             GraphicsDevice,
@@ -69,7 +69,7 @@ public class Level1 : Node
         platform = "the void!?";
 #endif
 
-        _debugText.UIText.Content =
+        _debugText.Text.Content =
             @$"Hello world from {platform}
             Hello form level 1
             {mousePos}";

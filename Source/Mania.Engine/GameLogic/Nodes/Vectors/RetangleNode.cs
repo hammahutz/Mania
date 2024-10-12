@@ -36,7 +36,7 @@ public class RectangleNode : Node
             {
                 Fill = new PointNode(graphicsDevice, Vector2.Zero);
                 Fill.Transform.LocalScale = size;
-                Fill.PointComponent.Color = Color.Blue;
+                Fill.VectorComponent.Color = Color.Blue;
             }
         }
 

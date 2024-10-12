@@ -1,8 +1,8 @@
 using Microsoft.Xna.Framework;
 
-namespace Mania.Engine.GameLogic.Components;
+namespace Mania.Engine.GameLogic;
 
-public interface IUpdateComponent
+public interface IUpdate
 {
     public void Update(GameTime gameTime);
 }

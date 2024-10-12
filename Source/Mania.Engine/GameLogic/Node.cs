@@ -8,7 +8,6 @@ namespace Mania.Engine.GameLogic;
 public abstract class Node
 {
     public event Action<Node> OnChangeScene;
-
     public void ChangeScene(Node scene) => OnChangeScene?.Invoke(scene);
 
     public ContentManager GlobalContent { get; private set; }
@@ -21,7 +20,6 @@ public abstract class Node
     public Node()
     {
         Transform = new Transform(this);
-
         Relatives = new RelativeHandler(this);
         Components = new ComponentsHandler(this);
     }
@@ -31,6 +29,7 @@ public abstract class Node
         GlobalContent = globalContent;
         LocalContent = localContent;
 
+        Components.Load(LocalContent);
         LoadContent();
     }
 
@@ -58,8 +57,9 @@ public abstract class Node
     {
         Relatives.Depose();
         Components.Depose();
-        Relatives = null;
-        Components = null;
+
+        Relatives = new RelativeHandler(this);
+        Components = new ComponentsHandler(this);
     }
 
     public void Exit()

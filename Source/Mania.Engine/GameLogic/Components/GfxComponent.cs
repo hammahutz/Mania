@@ -1,11 +1,13 @@
 using System;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Mania.Engine.GameLogic.Components;
 
-public class GfxComponent : Component, IDrawComponent
+public sealed class GfxComponent : Component, IDraw, ILoadContent
 {
+    private string _texturePath;
     public Texture2D Texture2D { get; private set; }
     public Rectangle? SourceRectangle { get; set; } = null;
     public Color Color { get; set; } = Color.White;
@@ -13,13 +15,15 @@ public class GfxComponent : Component, IDrawComponent
     public SpriteEffects Effects { get; set; } = SpriteEffects.None;
     public float LayerDepth { get; set; } = 0.5f;
 
-    public GfxComponent(Node node, Texture2D texture2D) : base(node)
+    public GfxComponent(Node node, string texturePath) : base(node) => _texturePath = texturePath;
+
+    public void Load(ContentManager contentManager)
     {
-        Texture2D = texture2D;
-        Origin = texture2D.Bounds.Center.ToVector2();
+        Texture2D = contentManager.Load<Texture2D>(_texturePath);
+        Origin = Texture2D.Bounds.Center.ToVector2();
     }
 
-    public virtual void Draw(SpriteBatch spriteBatch)
+    public void Draw(SpriteBatch spriteBatch)
     {
         spriteBatch.Draw
         (
@@ -34,4 +38,5 @@ public class GfxComponent : Component, IDrawComponent
             LayerDepth
         );
     }
+
 }

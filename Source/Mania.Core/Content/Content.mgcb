@@ -15,11 +15,18 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin ../../../Content/Dist/Json/Debug.json
+/importer:JsonImporter
+/processor:JsonProcessor
+/processorParam:Minify=True
+/processorParam:RuntimeIdentifier=Mania.Pipeline.JsonReader, Mania.PipeLine
+/build:../../../Content/Dist/Json/Debug.json;Json/Debug.json
+
 #begin ../../../Content/Dist/Json/Example.json
 /importer:JsonImporter
 /processor:JsonProcessor
 /processorParam:Minify=True
-/processorParam:RuntimeIdentifier=Mania.Core.Data.Pipeline.Json.ExampleModelTypeReader, Mania.Core
+/processorParam:RuntimeIdentifier=Mania.Pipeline.JsonReader, Mania.PipeLine
 /build:../../../Content/Dist/Json/Example.json;Json/Example.json
 
 #begin ../../../Content/Dist/SpriteFont/Debug.spritefont

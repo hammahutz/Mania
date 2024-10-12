@@ -1,7 +1,7 @@
 using System;
-using Mania.Engine.GameLogic.Components;
 using Mania.Engine.Util;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Mania.Engine.GameLogic;
@@ -10,47 +10,49 @@ public class ComponentsHandler
 {
     public Node CurrentNode { get; private set; }
 
-    public ComponentsHandler(Node node)
-    {
-        CurrentNode = node;
-    }
+    public ComponentsHandler(Node node) => CurrentNode = node;
 
+    public event Action<ContentManager> OnLoad;
     public event Action<GameTime> OnUpdate;
     public event Action<SpriteBatch> OnDraw;
 
     public T AddToGameLoop<T>(T component) where T : Component
     {
-        if (component is IDrawComponent)
+        if (component is ILoadContent)
         {
-            OnDraw += ((IDrawComponent)component).Draw;
+            OnLoad += ((ILoadContent)component).Load;
         }
-        else if (component is IUpdateComponent)
+        if (component is IUpdate)
         {
-            OnUpdate += ((IUpdateComponent)component).Update;
+            OnUpdate += ((IUpdate)component).Update;
         }
-        else
+        if (component is IDraw)
         {
-            GameDebug.Warning($"Not a compatible component {component}");
+            OnDraw += ((IDraw)component).Draw;
         }
+
         return component;
     }
 
     public void RemoveFromGameLoop(Component component)
     {
-        if (component is IDrawComponent)
+        if (component is ILoadContent)
         {
-            OnDraw -= ((IDrawComponent)component).Draw;
+            OnLoad -= ((ILoadContent)component).Load;
         }
-        else if (component is IUpdateComponent)
+        if (component is IUpdate)
         {
-            OnUpdate -= ((IUpdateComponent)component).Update;
+            OnUpdate -= ((IUpdate)component).Update;
         }
-        else
+        if (component is IDraw)
         {
-            GameDebug.Warning($"Not a compatible component {component}");
+            OnDraw -= ((IDraw)component).Draw;
         }
+
         component.Depose();
     }
+
+    public void Load(ContentManager contentManager) => OnLoad?.Invoke(contentManager);
 
     public void Update(GameTime gameTime) => OnUpdate?.Invoke(gameTime);
 
@@ -58,6 +60,7 @@ public class ComponentsHandler
 
     public void Depose()
     {
+        OnLoad = null;
         OnDraw = null;
         OnUpdate = null;
     }

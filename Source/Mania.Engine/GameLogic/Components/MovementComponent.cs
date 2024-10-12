@@ -4,11 +4,9 @@ using System;
 
 namespace Mania.Engine.GameLogic.Components;
 
-public class MovementComponent : Component, IUpdateComponent
+public sealed class MovementComponent : Component, IUpdate
 {
-    public MovementComponent(Node node) : base(node)
-    {
-    }
+    public MovementComponent(Node node) : base(node) { }
 
     public Vector2 Velocity
     {

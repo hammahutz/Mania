@@ -1,23 +1,16 @@
-﻿using System.Text;
+﻿using System.Linq.Expressions;
+using System.Text;
 using CommandLine;
 
 namespace Mania.Util;
 
-class Settings
+public class Settings
 {
     [Value(0, MetaName = "Project Folder Root Path", Required = false, HelpText = "Monogame project path")]
     public string ProjectFolderRootPath { get; set; } = ".";
 
-    [Option('c', "class", Required = false, HelpText = "Output .cs file and class name")]
-    public string OutputClassName { get; set; } = "ContentPaths";
-
     [Option('s', "source", Required = false, HelpText = "Content source")]
     public string ContentFolderPath { get; set; } = "../../Content/Dist";
-
-    [Option('f', "ignored-folders", Required = false, HelpText = "List of ignored folders")]
-    public string[] IgnoreFolders { get; set; } = ["bin", "obj"];
-    [Option('i', "ignored-files", Required = false, HelpText = "List of ignored files")]
-    public string[] IgnoreFiles { get; set; } = ["Content.mgcb"];
 
     [Option('v', "verbose", Required = false, HelpText = "Set output to verbose messages.")]
     public bool Verbose { get; set; }
@@ -25,7 +18,9 @@ class Settings
     [Option('n', "no-messages", Required = false, HelpText = "No messages")]
     public bool Silent { get; set; }
 
-
+    public string OutputClassName { get; set; } = "ContentPaths";
+    public List<string> IgnoreFolders { get; set; } = ["bin", "obj"];
+    public List<string> IgnoreFiles { get; set; } = ["Content.mgcb"];
 }
 
 
@@ -131,7 +126,7 @@ class ContentPathClassGenerator
 
             Logger.Log($"{fileIndents}{constantName} = {constantValue}");
 
-            classContent.AppendLine($"{fileIndents}public const string {constantName} = @\"{constantValue}\";");
+            classContent.AppendLine($"{fileIndents}public const string {constantName} = @\"Content/{constantValue}\";");
         }
 
         return classContent.ToString();

@@ -1,15 +1,14 @@
 using System;
-using Mania.Engine.Util;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Mania.Engine.GameLogic.Components;
 
-public class LineComponent : GfxComponent
+public sealed class LineComponent : Component
 {
+    public VectorComponent Vector { get; private set; }
     private Vector2 _endPosition;
-
-    public LineComponent(Node node, GraphicsDevice graphicsDevice) : base(node, TextureHelper.GetPixel(graphicsDevice)) { }
+    public LineComponent(Node node, GraphicsDevice graphicsDevice) : base(node) => Vector = Node.Components.AddToGameLoop(new VectorComponent(node, graphicsDevice));
 
     public Vector2 EndPosition
     {

@@ -1,11 +1,12 @@
 using System;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 
 namespace Mania.Engine.GameLogic.Components;
 
-public class SpriteComponent : GfxComponent
+public sealed class SpriteComponent : Component
 {
+    public GfxComponent Gfx { get; private set; }
+
     public Point CellCoordinate { get; private set; }
     public Point CellSize { get; private set; }
     public Rectangle CellSource => new Rectangle(CellCoordinate, CellSize);
@@ -13,13 +14,14 @@ public class SpriteComponent : GfxComponent
     public int CurrentRow { get; private set; }
     public int CurrentColumn { get; private set; }
 
-    public int Rows => CellSize.X / Texture2D.Width;
-    public int Columns => CellSize.Y / Texture2D.Height;
+    public int Rows => CellSize.X / Gfx.Texture2D.Width;
+    public int Columns => CellSize.Y / Gfx.Texture2D.Height;
 
 
-    public SpriteComponent(Node node, Texture2D texture2D, Point location, Point size)
-        : base(node, texture2D)
+    public SpriteComponent(Node node, string texturePath, Point location, Point size)
+        : base(node)
     {
+        Gfx = Node.Components.AddToGameLoop(new GfxComponent(node, texturePath));
         SetCellSize(size);
         SetCellLocation(location);
     }
@@ -31,7 +33,7 @@ public class SpriteComponent : GfxComponent
         CurrentRow = Math.Clamp(row, 0, Rows);
 
         CellCoordinate = new Point(CurrentColumn * CellSize.X, CurrentRow * CellSize.Y);
-        SourceRectangle = CellSource;
+        Gfx.SourceRectangle = CellSource;
     }
 
     public void SetCellSize(Point size)

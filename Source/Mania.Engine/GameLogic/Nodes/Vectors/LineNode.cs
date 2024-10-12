@@ -17,8 +17,6 @@ public class LineNode : Node
         {
             EndPosition = end
         });
-
-
     }
 }
 

@@ -6,7 +6,7 @@ namespace Mania.Engine.GameLogic.Nodes.Vectors;
 
 public class PointNode : Node
 {
-    public PointComponent PointComponent { get; private set; }
+    public VectorComponent VectorComponent { get; private set; }
     public GraphicsDevice GraphicsDevice { get; }
 
     public PointNode(GraphicsDevice graphicsDevice, Vector2 position)
@@ -14,7 +14,7 @@ public class PointNode : Node
     {
         GraphicsDevice = graphicsDevice;
         Transform.LocalPosition = position;
-        PointComponent = new PointComponent(this, GraphicsDevice);
-        Components.AddToGameLoop(PointComponent);
+        VectorComponent =
+        Components.AddToGameLoop(new VectorComponent(this, GraphicsDevice));
     }
 }
