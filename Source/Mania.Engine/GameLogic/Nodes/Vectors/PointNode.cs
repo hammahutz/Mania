@@ -14,7 +14,6 @@ public class PointNode : Node
     {
         GraphicsDevice = graphicsDevice;
         Transform.LocalPosition = position;
-        VectorComponent =
-        Components.AddToGameLoop(new VectorComponent(this, GraphicsDevice));
+        VectorComponent = Components.AddToGameLoop(new VectorComponent(this, GraphicsDevice));
     }
 }

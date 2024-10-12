@@ -17,14 +17,15 @@ public class Level1 : Node
 
     protected override void LoadContent()
     {
-        _debugText = new TextNode(ContentPaths.SpriteFont.Debug);
-        LineNode = new LineNode(GraphicsDevice, new Vector2(0, 0), new Vector2(400, 600));
-        var PointNode = new PointNode(GraphicsDevice, new Vector2(100, 100));
+        _debugText = Relatives.AddChild(new TextNode(ContentPaths.SpriteFont.Debug));
+        LineNode = Relatives.AddChild(new LineNode(GraphicsDevice, new Vector2(0, 0), new Vector2(400, 600)));
 
+        var PointNode = new PointNode(GraphicsDevice, new Vector2(100, 100));
         PointNode.Transform.LocalScale = new Vector2(100, 100);
         PointNode.VectorComponent.Color = Color.Magenta;
+        Relatives.AddChild(PointNode);
 
-        var poly = new PolyLineNode(
+        Relatives.AddChild(new PolyLineNode(
             GraphicsDevice,
             [
                 new Vector2(0,0),
@@ -32,22 +33,17 @@ public class Level1 : Node
                 new Vector2(500,600),
             ],
             new PolyLineNodeOptions() { Closed = true }
-        );
-        Relatives.AddChildren(
-            [
-                LineNode,
-                PointNode,
-                poly,
-                _debugText,
-                new RectangleNode(GraphicsDevice, new Vector2(100, 100), new RectangleNodeOptions {Closed = true, Fill = false})
-            ]
+        ));
+
+        Relatives.AddChild(
+                new RectangleNode(GraphicsDevice, new Vector2(100, 100), new RectangleNodeOptions { Closed = true, Fill = false })
         );
     }
 
     protected override void UpdateNode(GameTime gameTime)
     {
         if (Keyboard.GetState().IsKeyDown(Keys.Space))
-            ChangeScene(new Level1(GraphicsDevice));
+            ChangeScene(new Level2(GraphicsDevice));
 
         if (Keyboard.GetState().IsKeyDown(Keys.Left))
             Transform.LocalPosition += 10 * Vector2.UnitX * (float)gameTime.ElapsedGameTime.TotalSeconds;

@@ -38,14 +38,13 @@ public class RelativeHandler
         return this;
     }
 
-    public RelativeHandler AddChild(Node? child)
+    public T? AddChild<T>(T? child) where T : Node
     {
         if (child is null)
         {
             GameDebug.Warning($"Tries to add child, but child is null. Parent: {this}");
-            return this;
         }
-        if (Children.Contains(child))
+        else if (Children.Contains(child))
         {
             GameDebug.Log($"Tries to add child, but parent {this} already contains child {child}");
         }
@@ -56,7 +55,7 @@ public class RelativeHandler
             child.Enter(CurrentNode.GlobalContent, CurrentNode.LocalContent);
         }
 
-        return this;
+        return child;
     }
 
     public RelativeHandler AddChildren(Node[] children)

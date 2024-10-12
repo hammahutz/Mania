@@ -1,4 +1,6 @@
 using Mania.Engine.GameLogic;
+using Mania.Engine.GameLogic.Nodes.UI;
+using Microsoft.VisualBasic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -7,7 +9,6 @@ namespace Mania.Core;
 
 public class Level2 : Node
 {
-    private SpriteFont _debugFont;
 
     public GraphicsDevice GraphicsDevice { get; private set; }
 
@@ -16,7 +17,8 @@ public class Level2 : Node
 
     protected override void LoadContent()
     {
-        _debugFont = GlobalContent.Load<SpriteFont>(ContentPaths.SpriteFont.Debug);
+        var text = Relatives.AddChild(new TextNode(ContentPaths.SpriteFont.Debug));
+        text.Text.Content = "Hello from level 2";
     }
 
     protected override void UpdateNode(GameTime gameTime)
@@ -27,7 +29,6 @@ public class Level2 : Node
 
     protected override void DrawNode(SpriteBatch spriteBatch)
     {
-        spriteBatch.DrawString(_debugFont, "Hello from Level2", new Vector2(100, 100), Color.Red);
     }
 
 }
