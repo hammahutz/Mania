@@ -58,7 +58,7 @@ public class RelativeHandler
         return child;
     }
 
-    public RelativeHandler AddChildren(Node[] children)
+    public IEnumerable<T>? AddChildren<T>(T[] children) where T : Node
     {
         var (childrenNotToAdd, childrenToAdd) = children.Partition(c =>
         {
@@ -92,7 +92,8 @@ public class RelativeHandler
                 c.Relatives.SetParent(CurrentNode);
                 c.Enter(CurrentNode.GlobalContent, CurrentNode.LocalContent);
             });
-        return this;
+
+        return childrenToAdd;
     }
 
     public RelativeHandler RemoveChild(Node child)
@@ -127,6 +128,12 @@ public class RelativeHandler
             });
 
         return this;
+    }
+
+    public void RemoveAllChildren()
+    {
+        Children.ForEach(c => c.Depose());
+        Children.Clear();
     }
 
     public void Depose()

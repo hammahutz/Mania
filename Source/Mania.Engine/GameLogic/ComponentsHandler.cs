@@ -20,7 +20,7 @@ public class ComponentsHandler
     {
         if (component is ILoadContent)
         {
-            OnLoad += ((ILoadContent)component).Load;
+            OnLoad += ((ILoadContent)component).LoadContent;
         }
         if (component is IUpdate)
         {
@@ -38,7 +38,7 @@ public class ComponentsHandler
     {
         if (component is ILoadContent)
         {
-            OnLoad -= ((ILoadContent)component).Load;
+            OnLoad -= ((ILoadContent)component).LoadContent;
         }
         if (component is IUpdate)
         {

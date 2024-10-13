@@ -4,5 +4,5 @@ namespace Mania.Engine.GameLogic;
 
 public interface ILoadContent
 {
-    public void Load(ContentManager contentManager);
+    public void LoadContent(ContentManager contentManager);
 }

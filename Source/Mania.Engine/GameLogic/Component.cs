@@ -1,6 +1,6 @@
 namespace Mania.Engine.GameLogic;
 
-public class Component
+public abstract class Component
 {
     public Node Node { get; private set; }
     public Component(Node node) => Node = node;

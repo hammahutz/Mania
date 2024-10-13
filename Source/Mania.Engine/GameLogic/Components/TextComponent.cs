@@ -16,7 +16,7 @@ public sealed class TextComponent : Component, IDraw, ILoadContent
 
     public TextComponent(Node node, string spriteFontPath) : base(node) => _spriteFontPath = spriteFontPath;
 
-    public void Load(ContentManager contentManager) => SpriteFont = contentManager.Load<SpriteFont>($"{_spriteFontPath}");
+    public void LoadContent(ContentManager contentManager) => SpriteFont = contentManager.Load<SpriteFont>($"{_spriteFontPath}");
 
     public void Draw(SpriteBatch spriteBatch) =>
         spriteBatch.DrawString
