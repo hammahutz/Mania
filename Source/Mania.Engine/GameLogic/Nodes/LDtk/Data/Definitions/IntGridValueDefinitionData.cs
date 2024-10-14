@@ -1,8 +1,7 @@
-﻿using MonoLDtk.Shared.LDtkProject.Data.LDtkTileset;
-
+﻿using Mania.Engine.GameLogic.Nodes.LDtk.Data.Tileset;
 using System.Text.Json.Serialization;
 
-namespace MonoLDtk.Shared.LDtkProject.Data.LDtkDefinitions;
+namespace Mania.Engine.GameLogic.Nodes.LDtk.Data.Definitions;
 
 internal class IntGridValueDefinitionData
 {

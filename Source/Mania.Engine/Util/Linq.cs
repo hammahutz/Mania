@@ -1,9 +1,8 @@
-#nullable enable
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Mania.Engine.Extensions;
+namespace Mania.Engine.Util;
 
 public static class Linq
 {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.Json.Serialization;
 
-namespace MonoLDtk.Shared.LDtkProject.Data;
+namespace Mania.Engine.GameLogic.Nodes.LDtk.Data;
 
 internal class ReferenceToAnEntityInstanceData
 {

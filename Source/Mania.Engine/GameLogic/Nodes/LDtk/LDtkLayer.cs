@@ -1,16 +1,10 @@
 using System;
-using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Linq;
-using System.Net.Mail;
 using Mania.Engine.GameLogic;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
+using Mania.Engine.GameLogic.Nodes.LDtk.Data.Instance;
 using Microsoft.Xna.Framework.Graphics;
 
-using MonoLDtk.Shared.LDtkProject.Data.LDtkInstance;
-
-namespace MonoLDtk.Shared.LDtkProject;
+namespace Mania.Engine.GameLogic.Nodes.LDtk;
 
 public class LDtkLayer : Node
 {

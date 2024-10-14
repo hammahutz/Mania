@@ -1,8 +1,8 @@
-﻿using MonoLDtk.Shared.LDtkProject.Data.LDtkLevel;
-
+﻿using Mania.Engine.GameLogic.Nodes.LDtk.Data.Level;
+using System;
 using System.Text.Json.Serialization;
 
-namespace MonoLDtk.Shared.LDtkProject.Data;
+namespace Mania.Engine.GameLogic.Nodes.LDtk.Data;
 
 internal class WorldData
 {

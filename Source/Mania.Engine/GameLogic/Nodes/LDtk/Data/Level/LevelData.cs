@@ -1,8 +1,9 @@
-﻿using MonoLDtk.Shared.LDtkProject.Data.LDtkInstance;
+﻿
 using System;
 using System.Text.Json.Serialization;
+using Mania.Engine.GameLogic.Nodes.LDtk.Data.Instance;
 
-namespace MonoLDtk.Shared.LDtkProject.Data.LDtkLevel;
+namespace Mania.Engine.GameLogic.Nodes.LDtk.Data.Level;
 
 /// <summary>
 /// This section contains all the level data. It can be found in 2 distinct forms, depending
@@ -69,7 +70,7 @@ internal class LevelData
     /// `Contain`, `Cover`, `CoverDirty`, `Repeat`
     /// </summary>
     [JsonPropertyName("bgPos")]
-    internal BgPos? LevelBgPos { get; set; }
+    internal BgPosData? LevelBgPos { get; set; }
 
     /// <summary>
     /// The *optional* relative path to the level background image.

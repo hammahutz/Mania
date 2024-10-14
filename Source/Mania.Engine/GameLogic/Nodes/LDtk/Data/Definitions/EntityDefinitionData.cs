@@ -1,8 +1,7 @@
-﻿using MonoLDtk.Shared.LDtkProject.Data.LDtkTileset;
-
+﻿using Mania.Engine.GameLogic.Nodes.LDtk.Data.Tileset;
 using System.Text.Json.Serialization;
 
-namespace MonoLDtk.Shared.LDtkProject.Data.LDtkDefinitions;
+namespace Mania.Engine.GameLogic.Nodes.LDtk.Data.Definitions;
 
 internal class EntityDefinitionData
 {
@@ -31,6 +30,7 @@ internal class EntityDefinitionData
     /// </summary>
     [JsonPropertyName("fieldDefs")]
     internal FieldDefinitionData[] FieldDefs { get; set; }
+
 
     [JsonPropertyName("fillOpacity")]
     internal double FillOpacity { get; set; }
@@ -61,14 +61,14 @@ internal class EntityDefinitionData
     /// Possible values: `DiscardOldOnes`, `PreventAdding`, `MoveLastOne`
     /// </summary>
     [JsonPropertyName("limitBehavior")]
-    internal LimitBehavior LimitBehavior { get; set; }
+    internal LimitBehaviorData LimitBehavior { get; set; }
 
     /// <summary>
     /// If TRUE, the maxCount is a "per world" limit, if FALSE, it's a "per level". Possible
     /// values: `PerLayer`, `PerLevel`, `PerWorld`
     /// </summary>
     [JsonPropertyName("limitScope")]
-    internal LimitScope LimitScope { get; set; }
+    internal LimitScopeData LimitScope { get; set; }
 
     [JsonPropertyName("lineOpacity")]
     internal double LineOpacity { get; set; }
@@ -127,7 +127,7 @@ internal class EntityDefinitionData
     /// Possible values: `Rectangle`, `Ellipse`, `Tile`, `Cross`
     /// </summary>
     [JsonPropertyName("renderMode")]
-    internal RenderMode RenderMode { get; set; }
+    internal RenderModeData RenderMode { get; set; }
 
     /// <summary>
     /// If TRUE, the entity instances will be resizable horizontally
@@ -175,7 +175,7 @@ internal class EntityDefinitionData
     /// `FullSizeUncropped`, `NineSlice`
     /// </summary>
     [JsonPropertyName("tileRenderMode")]
-    internal TileRenderMode TileRenderMode { get; set; }
+    internal TileRenderModeData TileRenderMode { get; set; }
 
     /// <summary>
     /// Tileset ID used for optional tile display

@@ -1,9 +1,9 @@
-﻿using MonoLDtk.Shared.LDtkProject.Data.LDtkDefinitions;
-using MonoLDtk.Shared.LDtkProject.Data.LDtkLevel;
+﻿using Mania.Engine.GameLogic.Nodes.LDtk.Data.Definitions;
+using Mania.Engine.GameLogic.Nodes.LDtk.Data.Level;
 using System;
 using System.Text.Json.Serialization;
 
-namespace MonoLDtk.Shared.LDtkProject.Data;
+namespace Mania.Engine.GameLogic.Nodes.LDtk.Data;
 
 internal class LDtkData
 {
@@ -238,7 +238,7 @@ internal class LDtkData
     /// `GridVania`, `LinearHorizontal`, `LinearVertical`
     /// </summary>
     [JsonPropertyName("worldLayout")]
-    internal WorldLayout? WorldLayout { get; set; }
+    internal WorldLayoutData? WorldLayout { get; set; }
 
     /// <summary>
     /// This array will be empty, unless you enable the Multi-Worlds in the project advanced

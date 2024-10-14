@@ -1,4 +1,4 @@
-﻿namespace MonoLDtk.Shared.LDtkProject.Data;
+﻿namespace Mania.Engine.GameLogic.Nodes.LDtk.Data;
 
 internal enum AllowedRefsData { Any, OnlySame, OnlySpecificEntity, OnlyTags };
 internal enum BgPosData { Contain, Cover, CoverDirty, Repeat, Unscaled };

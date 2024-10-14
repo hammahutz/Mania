@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 
-namespace Mania.Engine.Extensions;
+namespace Mania.Engine.Util;
 
 public static class Spatial
 {

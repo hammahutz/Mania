@@ -1,4 +1,4 @@
-﻿namespace MonoLDtk.Shared.LDtkProject;
+﻿namespace Mania.Engine.GameLogic.Nodes.LDtk;
 
 public static class LDtkLayerType
 {

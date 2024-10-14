@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace MonoLDtk.Shared.LDtkProject.Data.LDtkDefinitions;
+namespace Mania.Engine.GameLogic.Nodes.LDtk.Data.Definitions;
 
 internal class LayerDefinitionData
 {

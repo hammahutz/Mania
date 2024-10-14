@@ -1,11 +1,9 @@
-﻿using Mania.Engine.GameLogic;
-using Mania.Engine.GameLogic.Components;
+﻿using Mania.Engine.GameLogic.Components;
+using Mania.Engine.GameLogic.Nodes.LDtk.Data.Instance;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-using MonoLDtk.Shared.LDtkProject.Data.LDtkInstance;
-
-namespace MonoLDtk.Shared.LDtkProject;
+namespace Mania.Engine.GameLogic.Nodes.LDtk;
 
 public class LDtkTile : Node
 {

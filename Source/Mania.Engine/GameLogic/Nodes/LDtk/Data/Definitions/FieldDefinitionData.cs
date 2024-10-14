@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace MonoLDtk.Shared.LDtkProject.Data.LDtkDefinitions;
+namespace Mania.Engine.GameLogic.Nodes.LDtk.Data.Definitions;
 
 internal class FieldDefinitionData
 {
@@ -25,7 +25,7 @@ internal class FieldDefinitionData
     /// Possible values: `Any`, `OnlySame`, `OnlyTags`, `OnlySpecificEntity`
     /// </summary>
     [JsonPropertyName("allowedRefs")]
-    internal AllowedRefs AllowedRefs { get; set; }
+    internal AllowedRefsData AllowedRefs { get; set; }
 
     [JsonPropertyName("allowedRefsEntityUid")]
     internal long? AllowedRefsEntityUid { get; set; }
@@ -84,13 +84,13 @@ internal class FieldDefinitionData
     /// `RefLinkBetweenCenters`
     /// </summary>
     [JsonPropertyName("editorDisplayMode")]
-    internal EditorDisplayMode EditorDisplayMode { get; set; }
+    internal EditorDisplayModeData EditorDisplayMode { get; set; }
 
     /// <summary>
     /// Possible values: `Above`, `Center`, `Beneath`
     /// </summary>
     [JsonPropertyName("editorDisplayPos")]
-    internal EditorDisplayPos EditorDisplayPos { get; set; }
+    internal EditorDisplayPosData EditorDisplayPos { get; set; }
 
     [JsonPropertyName("editorDisplayScale")]
     internal double EditorDisplayScale { get; set; }
@@ -99,7 +99,7 @@ internal class FieldDefinitionData
     /// Possible values: `ZigZag`, `StraightArrow`, `CurvedArrow`, `ArrowsLine`, `DashedLine`
     /// </summary>
     [JsonPropertyName("editorLinkStyle")]
-    internal EditorLinkStyle EditorLinkStyle { get; set; }
+    internal EditorLinkStyleData EditorLinkStyle { get; set; }
 
     [JsonPropertyName("editorShowInWorld")]
     internal bool EditorShowInWorld { get; set; }
@@ -149,7 +149,7 @@ internal class FieldDefinitionData
     /// `LangHaxe`, `LangMarkdown`, `LangJson`, `LangXml`, `LangLog`
     /// </summary>
     [JsonPropertyName("textLanguageMode")]
-    internal TextLanguageMode? TextLanguageMode { get; set; }
+    internal TextLanguageModeData? TextLanguageMode { get; set; }
 
     /// <summary>
     /// UID of the tileset used for a Tile

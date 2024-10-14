@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Linq;
 using Mania.Engine.GameLogic;
+using Mania.Engine.GameLogic.Nodes.LDtk.Data.Level;
 using Microsoft.Xna.Framework;
+using MonoLDtk.Shared.LDtkProject;
 
-using MonoLDtk.Shared.LDtkProject.Data.LDtkLevel;
-
-namespace MonoLDtk.Shared.LDtkProject;
+namespace Mania.Engine.GameLogic.Nodes.LDtk;
 
 internal class LDtkLevel : Node
 {

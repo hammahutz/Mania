@@ -26,6 +26,8 @@ public sealed class GfxComponent : Component, IDraw, ILoadContent
     public SpriteEffects Effects { get; set; } = SpriteEffects.None;
     public float LayerDepth { get; set; } = 0.5f;
 
+    #region Builder
+
     public GfxComponent(Node node, string texturePath) : base(node) => _texturePath = texturePath;
 
     public GfxComponent SetSourceRectangle(Rectangle rectangle)
@@ -51,17 +53,19 @@ public sealed class GfxComponent : Component, IDraw, ILoadContent
         Origin = origin;
         return this;
     }
+
     public GfxComponent SetEffects(SpriteEffects effects)
     {
         Effects = effects;
         return this;
     }
+
     public GfxComponent SetLayerDepth(float layerDepth)
     {
         LayerDepth = layerDepth;
         return this;
     }
-
+    #endregion
 
 
     public void LoadContent(ContentManager contentManager)
@@ -85,5 +89,7 @@ public sealed class GfxComponent : Component, IDraw, ILoadContent
             LayerDepth
         );
     }
+
+
 
 }

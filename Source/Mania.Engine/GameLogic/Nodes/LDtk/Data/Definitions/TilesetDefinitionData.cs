@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace MonoLDtk.Shared.LDtkProject.Data.LDtkDefinitions;
+namespace Mania.Engine.GameLogic.Nodes.LDtk.Data.Definitions;
 
 internal class TilesetDefinitionData
 {
@@ -35,7 +35,7 @@ internal class TilesetDefinitionData
     /// instead of a loaded one. Possible values: &lt;`null`&gt;, `LdtkIcons`
     /// </summary>
     [JsonPropertyName("embedAtlas")]
-    internal EmbedAtlas? EmbedAtlas { get; set; }
+    internal EmbedAtlasData? EmbedAtlas { get; set; }
 
     /// <summary>
     /// Tileset tags using Enum values specified by `tagsSourceEnumId`. This array contains 1

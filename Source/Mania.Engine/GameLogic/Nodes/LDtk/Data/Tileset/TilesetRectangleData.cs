@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace MonoLDtk.Shared.LDtkProject.Data.LDtkTileset;
+namespace Mania.Engine.GameLogic.Nodes.LDtk.Data.Tileset;
 
 internal class TilesetRectangleData
 {

@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace MonoLDtk.Shared.LDtkProject.Data.LDtkDefinitions;
+namespace Mania.Engine.GameLogic.Nodes.LDtk.Data.Definitions;
 
 internal class AutoLayerRuleDefinitionData
 {
@@ -30,7 +30,7 @@ internal class AutoLayerRuleDefinitionData
     /// Checker mode Possible values: `None`, `Horizontal`, `Vertical`
     /// </summary>
     [JsonPropertyName("checker")]
-    internal Checker Checker { get; set; }
+    internal CheckerData Checker { get; set; }
 
     /// <summary>
     /// If TRUE, allow rule to be matched by flipping its pattern horizontally
@@ -99,7 +99,7 @@ internal class AutoLayerRuleDefinitionData
     /// Defines how tileIds array is used Possible values: `Single`, `Stamp`
     /// </summary>
     [JsonPropertyName("tileMode")]
-    internal TileMode TileMode { get; set; }
+    internal TileModeData TileMode { get; set; }
 
     /// <summary>
     /// Max random offset for X tile pos
