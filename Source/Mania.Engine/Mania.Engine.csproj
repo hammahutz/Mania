@@ -7,6 +7,9 @@
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mania.Library\Mania.Library.csproj" />
+  </ItemGroup>
   <PropertyGroup>
     <Nullable>enable</Nullable>
   </PropertyGroup>

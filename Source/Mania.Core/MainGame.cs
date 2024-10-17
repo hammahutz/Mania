@@ -1,4 +1,4 @@
-﻿using Mania.Engine.GameLogic;
+﻿using Mania.Engine.Nodes;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;

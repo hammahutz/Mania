@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mania.Pipeline", "Source\Ma
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mania.Util", "Source\Mania.Util\Mania.Util.csproj", "{2E089EFB-92BD-46EC-9A4A-C038D9E9F2AB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{F289C0F2-83F9-4186-B73A-17336BFEDC0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mania.Library", "Source\Mania.Library\Mania.Library.csproj", "{816CCF22-15A0-48E8-99E0-9EA1A91790D8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,5 +52,12 @@ Global
 		{2E089EFB-92BD-46EC-9A4A-C038D9E9F2AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E089EFB-92BD-46EC-9A4A-C038D9E9F2AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E089EFB-92BD-46EC-9A4A-C038D9E9F2AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{816CCF22-15A0-48E8-99E0-9EA1A91790D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{816CCF22-15A0-48E8-99E0-9EA1A91790D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{816CCF22-15A0-48E8-99E0-9EA1A91790D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{816CCF22-15A0-48E8-99E0-9EA1A91790D8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{816CCF22-15A0-48E8-99E0-9EA1A91790D8} = {F289C0F2-83F9-4186-B73A-17336BFEDC0D}
 	EndGlobalSection
 EndGlobal

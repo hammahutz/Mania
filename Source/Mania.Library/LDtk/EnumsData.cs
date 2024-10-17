@@ -1,0 +1,21 @@
+﻿namespace Mania.Library.LDtk;
+
+public enum AllowedRefsData { Any, OnlySame, OnlySpecificEntity, OnlyTags };
+public enum BgPosData { Contain, Cover, CoverDirty, Repeat, Unscaled };
+public enum CheckerData { Horizontal, None, Vertical };
+public enum EditorDisplayModeData { ArrayCountNoLabel, ArrayCountWithLabel, EntityTile, Hidden, LevelTile, NameAndValue, PointPath, PointPathLoop, PointStar, Points, RadiusGrid, RadiusPx, RefLinkBetweenCenters, RefLinkBetweenPivots, ValueOnly };
+public enum EditorDisplayPosData { Above, Beneath, Center };
+public enum EditorLinkStyleData { ArrowsLine, CurvedArrow, DashedLine, StraightArrow, ZigZag };
+public enum EmbedAtlasData { LdtkIcons };
+public enum FlagData { DiscardPreCsvIntGrid, ExportPreCsvIntGridFormat, IgnoreBackupSuggest, MultiWorlds, PrependIndexToLevelFileNames, UseMultilinesType };
+public enum IdentifierStyleData { Capitalize, Free, Lowercase, Uppercase };
+public enum ImageExportModeData { LayersAndLevels, None, OneImagePerLayer, OneImagePerLevel };
+public enum LimitBehaviorData { DiscardOldOnes, MoveLastOne, PreventAdding };
+public enum LimitScopeData { PerLayer, PerLevel, PerWorld };
+public enum WhenData { AfterLoad, AfterSave, BeforeSave, Manual };
+public enum WorldLayoutData { Free, GridVania, LinearHorizontal, LinearVertical };
+public enum RenderModeData { Cross, Ellipse, Rectangle, Tile };
+public enum TextLanguageModeData { LangC, LangHaxe, LangJs, LangJson, LangLog, LangLua, LangMarkdown, LangPython, LangRuby, LangXml };
+public enum TileModeData { Single, Stamp };
+public enum TileRenderModeData { Cover, FitInside, FullSizeCropped, FullSizeUncropped, NineSlice, Repeat, Stretch };
+public enum TypeEnumData { AutoLayer, Entities, IntGrid, Tiles };

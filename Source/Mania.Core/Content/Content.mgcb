@@ -10,8 +10,7 @@
 
 #-------------------------------- References --------------------------------#
 
-/reference:..\..\Mania.Pipeline\bin\Release\net8.0\Mania.Pipeline.dll
-/reference:..\..\Mania.Pipeline\bin\Release\net8.0\Mania.Pipeline.dll
+/reference:..\..\Mania.Pipeline\bin\Release\net8.0\publish\Mania.Pipeline.dll
 
 #---------------------------------- Content ---------------------------------#
 

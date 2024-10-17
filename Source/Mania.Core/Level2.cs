@@ -1,5 +1,5 @@
-using Mania.Engine.GameLogic;
 using Mania.Engine.GameLogic.Nodes.UI;
+using Mania.Engine.Nodes;
 using Microsoft.VisualBasic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;

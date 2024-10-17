@@ -1,6 +1,7 @@
-using Mania.Engine.GameLogic;
-using Mania.Engine.GameLogic.Nodes.UI;
 using Mania.Engine.GameLogic.Nodes.Vectors;
+using Mania.Engine.Nodes;
+using Mania.Engine.Nodes.UI;
+using Mania.Engine.Nodes.Vectors;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -9,34 +10,34 @@ namespace Mania.Core;
 public class Level1 : Node
 {
     public GraphicsDevice GraphicsDevice { get; private set; }
-    private TextNode _debugText;
+    private UIText _debugText;
     private Point mousePos = Point.Zero;
-    private LineNode LineNode;
+    private VectorLine LineNode;
 
     public Level1(GraphicsDevice graphicsDevice) => GraphicsDevice = graphicsDevice;
 
     protected override void LoadContent()
     {
-        _debugText = Relatives.AddChild(new TextNode(ContentPaths.SpriteFont.Debug));
-        LineNode = Relatives.AddChild(new LineNode(GraphicsDevice, new Vector2(0, 0), new Vector2(400, 600)));
+        _debugText = Relatives.AddChild(new UIText(ContentPaths.SpriteFont.Debug));
+        LineNode = Relatives.AddChild(new VectorLine(GraphicsDevice, new Vector2(0, 0), new Vector2(400, 600)));
 
-        var PointNode = new PointNode(GraphicsDevice, new Vector2(100, 100));
+        var PointNode = new VectorPoint(GraphicsDevice, new Vector2(100, 100));
         PointNode.Transform.LocalScale = new Vector2(100, 100);
         PointNode.VectorComponent.Color = Color.Magenta;
         Relatives.AddChild(PointNode);
 
-        Relatives.AddChild(new PolyLineNode(
+        Relatives.AddChild(new VectorPolyLine(
             GraphicsDevice,
             [
                 new Vector2(0,0),
                 new Vector2(100,50),
                 new Vector2(500,600),
             ],
-            new PolyLineNodeOptions() { Closed = true }
+            new VectorPolyLineOptions() { Closed = true }
         ));
 
         Relatives.AddChild(
-                new RectangleNode(GraphicsDevice, new Vector2(100, 100), new RectangleNodeOptions { Closed = true, Fill = false })
+                new VectorRectangle(GraphicsDevice, new Vector2(100, 100), new VectorRectangleOptions { Closed = true, Fill = false })
         );
     }
 
