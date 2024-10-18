@@ -3,21 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mania.Core", "Source\Mania.Core\Mania.Core.csproj", "{E0EBF566-0180-4B26-AF83-1E5184811C52}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mania.Core", "src\Mania.Core\Mania.Core.csproj", "{E0EBF566-0180-4B26-AF83-1E5184811C52}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mania.DirectX", "Source\Mania.DirectX\Mania.DirectX.csproj", "{243E3ABE-0528-4A35-98B9-A6880415DC4E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mania.DirectX", "src\Mania.DirectX\Mania.DirectX.csproj", "{243E3ABE-0528-4A35-98B9-A6880415DC4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mania.OpenGL", "Source\Mania.OpenGL\Mania.OpenGL.csproj", "{90C0930C-1C09-4421-9CBE-FB3643371345}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mania.OpenGL", "src\Mania.OpenGL\Mania.OpenGL.csproj", "{90C0930C-1C09-4421-9CBE-FB3643371345}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mania.Engine", "Source\Mania.Engine\Mania.Engine.csproj", "{4F1E66DE-89D1-4056-A023-76A67A7302F2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mania.Engine", "src\Mania.Engine\Mania.Engine.csproj", "{4F1E66DE-89D1-4056-A023-76A67A7302F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mania.Pipeline", "Source\Mania.Pipeline\Mania.Pipeline.csproj", "{10DFF27B-5065-4DA9-82F0-3219076C9DF9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mania.Pipeline", "src\Mania.Pipeline\Mania.Pipeline.csproj", "{10DFF27B-5065-4DA9-82F0-3219076C9DF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mania.Util", "Source\Mania.Util\Mania.Util.csproj", "{2E089EFB-92BD-46EC-9A4A-C038D9E9F2AB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mania.Util", "src\Mania.Util\Mania.Util.csproj", "{2E089EFB-92BD-46EC-9A4A-C038D9E9F2AB}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{F289C0F2-83F9-4186-B73A-17336BFEDC0D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C8A5C3A8-F8B6-4705-8E72-439541D5B8BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mania.Library", "Source\Mania.Library\Mania.Library.csproj", "{816CCF22-15A0-48E8-99E0-9EA1A91790D8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mania.Library", "src\Mania.Library\Mania.Library.csproj", "{6CA3FD98-314F-4932-A707-7B575AE65F55}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,12 +52,12 @@ Global
 		{2E089EFB-92BD-46EC-9A4A-C038D9E9F2AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E089EFB-92BD-46EC-9A4A-C038D9E9F2AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E089EFB-92BD-46EC-9A4A-C038D9E9F2AB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{816CCF22-15A0-48E8-99E0-9EA1A91790D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{816CCF22-15A0-48E8-99E0-9EA1A91790D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{816CCF22-15A0-48E8-99E0-9EA1A91790D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{816CCF22-15A0-48E8-99E0-9EA1A91790D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CA3FD98-314F-4932-A707-7B575AE65F55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CA3FD98-314F-4932-A707-7B575AE65F55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CA3FD98-314F-4932-A707-7B575AE65F55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CA3FD98-314F-4932-A707-7B575AE65F55}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{816CCF22-15A0-48E8-99E0-9EA1A91790D8} = {F289C0F2-83F9-4186-B73A-17336BFEDC0D}
+		{6CA3FD98-314F-4932-A707-7B575AE65F55} = {C8A5C3A8-F8B6-4705-8E72-439541D5B8BC}
 	EndGlobalSection
 EndGlobal

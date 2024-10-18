@@ -1,0 +1,294 @@
+
+#----------------------------- Global Properties ----------------------------#
+
+/outputDir:bin/$(Platform)
+/intermediateDir:obj/$(Platform)
+/platform:DesktopGL
+/config:
+/profile:Reach
+/compress:False
+
+#-------------------------------- References --------------------------------#
+
+/reference:..\..\Mania.Pipeline\bin\Release\net8.0\publish\Mania.Pipeline.dll
+
+#---------------------------------- Content ---------------------------------#
+
+#begin ../../../res/Content/Json/Debug.json
+/importer:JsonImporter
+/processor:JsonProcessor
+/processorParam:Minify=True
+/processorParam:RuntimeIdentifier=Mania.Pipeline.JsonReader, Mania.PipeLine
+/build:../../../res/Content/Json/Debug.json;Json/Debug.json
+
+#begin ../../../res/Content/Json/Example.json
+/importer:JsonImporter
+/processor:JsonProcessor
+/processorParam:Minify=True
+/processorParam:RuntimeIdentifier=Mania.Pipeline.JsonReader, Mania.PipeLine
+/build:../../../res/Content/Json/Example.json;Json/Example.json
+
+#begin ../../../res/Content/LDtk/world1.ldtk
+/importer:LDtkImporter
+/processor:LDtkProcessor
+/build:../../../res/Content/LDtk/world1.ldtk;LDtk/world1.ldtk
+
+#begin ../../../res/Content/SpriteFont/Debug.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:../../../res/Content/SpriteFont/Debug.spritefont;SpriteFont/Debug.spritefont
+
+#begin ../../../res/Content/Texture2D/Hero/Attack.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../../../res/Content/Texture2D/Hero/Attack.png;Texture2D/Hero/Attack.png
+
+#begin ../../../res/Content/Texture2D/Hero/Fall.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../../../res/Content/Texture2D/Hero/Fall.png;Texture2D/Hero/Fall.png
+
+#begin ../../../res/Content/Texture2D/Hero/FallNoSword.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../../../res/Content/Texture2D/Hero/FallNoSword.png;Texture2D/Hero/FallNoSword.png
+
+#begin ../../../res/Content/Texture2D/Hero/Idle.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../../../res/Content/Texture2D/Hero/Idle.png;Texture2D/Hero/Idle.png
+
+#begin ../../../res/Content/Texture2D/Hero/Jump.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../../../res/Content/Texture2D/Hero/Jump.png;Texture2D/Hero/Jump.png
+
+#begin ../../../res/Content/Texture2D/Hero/JumpNoSword.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../../../res/Content/Texture2D/Hero/JumpNoSword.png;Texture2D/Hero/JumpNoSword.png
+
+#begin ../../../res/Content/Texture2D/Hero/NoSword.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../../../res/Content/Texture2D/Hero/NoSword.png;Texture2D/Hero/NoSword.png
+
+#begin ../../../res/Content/Texture2D/Hero/Run.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../../../res/Content/Texture2D/Hero/Run.png;Texture2D/Hero/Run.png
+
+#begin ../../../res/Content/Texture2D/Hero/RunNoSword.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../../../res/Content/Texture2D/Hero/RunNoSword.png;Texture2D/Hero/RunNoSword.png
+
+#begin ../../../res/Content/Texture2D/LavaCaves/BackgroundFar.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../../../res/Content/Texture2D/LavaCaves/BackgroundFar.png;Texture2D/LavaCaves/BackgroundFar.png
+
+#begin ../../../res/Content/Texture2D/LavaCaves/BackgroundFull.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../../../res/Content/Texture2D/LavaCaves/BackgroundFull.png;Texture2D/LavaCaves/BackgroundFull.png
+
+#begin ../../../res/Content/Texture2D/LavaCaves/BackgroundNear.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../../../res/Content/Texture2D/LavaCaves/BackgroundNear.png;Texture2D/LavaCaves/BackgroundNear.png
+
+#begin ../../../res/Content/Texture2D/LavaCaves/LavaAnimationBottom.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../../../res/Content/Texture2D/LavaCaves/LavaAnimationBottom.png;Texture2D/LavaCaves/LavaAnimationBottom.png
+
+#begin ../../../res/Content/Texture2D/LavaCaves/LavaAnimationTop.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../../../res/Content/Texture2D/LavaCaves/LavaAnimationTop.png;Texture2D/LavaCaves/LavaAnimationTop.png
+
+#begin ../../../res/Content/Texture2D/LavaCaves/LavaFallAnimation.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../../../res/Content/Texture2D/LavaCaves/LavaFallAnimation.png;Texture2D/LavaCaves/LavaFallAnimation.png
+
+#begin ../../../res/Content/Texture2D/LavaCaves/LavaTileset.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../../../res/Content/Texture2D/LavaCaves/LavaTileset.png;Texture2D/LavaCaves/LavaTileset.png
+
+#begin ../../../res/Content/Texture2D/LavaCaves/RuinsDecorations.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../../../res/Content/Texture2D/LavaCaves/RuinsDecorations.png;Texture2D/LavaCaves/RuinsDecorations.png
+
+#begin ../../../res/Content/Texture2D/Worm/Death.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../../../res/Content/Texture2D/Worm/Death.png;Texture2D/Worm/Death.png
+
+#begin ../../../res/Content/Texture2D/Worm/Idle.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../../../res/Content/Texture2D/Worm/Idle.png;Texture2D/Worm/Idle.png
+
+#begin ../../../res/Content/Texture2D/Worm/Projectile.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../../../res/Content/Texture2D/Worm/Projectile.png;Texture2D/Worm/Projectile.png
+
+#begin ../../../res/Content/Texture2D/Worm/Shoot.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:../../../res/Content/Texture2D/Worm/Shoot.png;Texture2D/Worm/Shoot.png
+

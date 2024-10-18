@@ -6,9 +6,9 @@
       "type": "coreclr",
       "request": "launch",
       "preLaunchTask": "Build OpenGL",
-      "program": "${workspaceFolder}/Source/Mania.OpenGL/bin/Debug/net8.0/Mania.OpenGL.dll",
+      "program": "${workspaceFolder}/src/Mania.OpenGL/bin/Debug/net8.0/Mania.OpenGL.dll",
       "args": [],
-      "cwd": "${workspaceFolder}/Source/Mania.OpenGL",
+      "cwd": "${workspaceFolder}/src/Mania.OpenGL",
       "stopAtEntry": false,
       "console": "internalConsole"
     },
@@ -17,9 +17,9 @@
       "type": "coreclr",
       "request": "launch",
       "preLaunchTask": "Build Android",
-      "program": "${workspaceFolder}/Source/Mania.Android/bin/Debug/net8.0/Mania.Android.dll",
+      "program": "${workspaceFolder}/src/Mania.Android/bin/Debug/net8.0/Mania.Android.dll",
       "args": [],
-      "cwd": "${workspaceFolder}/Source/Mania.Android",
+      "cwd": "${workspaceFolder}/src/Mania.Android",
       "stopAtEntry": false,
       "console": "internalConsole"
     },
@@ -28,9 +28,9 @@
       "type": "coreclr",
       "request": "launch",
       "preLaunchTask": "Build DirectX",
-      "program": "${workspaceFolder}/Source/Mania.DirectX/bin/Debug/net8.0-windows/Mania.DirectX.dll",
+      "program": "${workspaceFolder}/src/Mania.DirectX/bin/Debug/net8.0-windows/Mania.DirectX.dll",
       "args": [],
-      "cwd": "${workspaceFolder}/Source/Mania.DirectX",
+      "cwd": "${workspaceFolder}/src/Mania.DirectX",
       "stopAtEntry": false,
       "console": "integratedTerminal"
     },
@@ -39,9 +39,9 @@
       "type": "coreclr",
       "request": "launch",
       "preLaunchTask": "Build Util",
-      "program": "${workspaceFolder}/Source/Mania.Util/bin/Debug/net8.0/Mania.Util.dll",
-      "args": ["../Mania.Core"],
-      "cwd": "${workspaceFolder}/Source/Mania.Util",
+      "program": "${workspaceFolder}/src/Mania.Util/bin/Debug/net8.0/Mania.Util.dll",
+      "args": ["../Mania.Core", "-v"],
+      "cwd": "${workspaceFolder}/src/Mania.Util",
       "stopAtEntry": false,
       "console": "integratedTerminal"
     }
